@@ -43,3 +43,40 @@ $$
 i.e., we can approximate the integration by averaging the randomly sampled value $f(x)$, with $x$ following uniform distribution.
 
 Moreover, the method in the introduction is a special case of Monte Carlo method.
+
+# Aging Aware Training
+
+The goal of aging aware training is
+$$
+\min_{\theta_{\rm init}} \int_{t=0}^1 L(\theta(t)){\rm d}t,
+$$
+where $\theta(t)=\theta_{\rm init}\cdot\mathop{A}(t)$ denotes the aging of the resistors. Using Monto Carlo method, it is converted to
+$$
+\min_{\theta_{\rm init}} \frac{1}{K}\sum_{k\in \mathfrak{K} } L \left(\theta[k]\right),
+$$
+where $\mathfrak{K}$ is a set of $K$ uniform randomly sampled timestamps $k\in[0,1]$.
+
+To minimize this function, i.e., $\frac{1}{N}\sum_{k\in \mathfrak{K} } L \left(\theta[k]\right)$, we apply intuitively the gradient descent:
+$$
+\begin{align}
+\theta_{\rm init}&:=\theta_{\rm init} - \alpha\cdot\nabla_{\theta_{\rm init}}\left(\frac{1}{K}\sum_{k\in \mathfrak{K} } L \left(\theta[k]\right)\right)\\
+&=\theta_{\rm init} - \frac{\alpha}{K}\cdot\nabla_{\theta_{\rm init}}\left(\sum_{k\in \mathfrak{K} } L \left(\theta[k]\right)\right)\\
+&=\theta_{\rm init} - \frac{\alpha}{K}\cdot \sum_{k\in \mathfrak{K} } \nabla_{\theta_{\rm init}}\left(L \left(\theta[k]\right)\right)\\
+\end{align}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,19 +8,24 @@ import matplotlib.pyplot as plt
 
 
 class PNNLayer(torch.nn.Module):
-    def __init__(self, n_in, n_out):
+    def __init__(self, n_in, n_out, model, param_approx):
         '''
         Generate a PNN layer
         :param n_in: number of input of the layer
         :param n_out: number of output of the layer
         '''
         super(PNNLayer, self).__init__()
+        # initialize theta
         # theta is [n_out , n_in + 2] vector. Plus two -> 1 for bias, 1 for decouple
         # a row of theta consists of [theta_1, theta_2, ..., theta_{n_in}, theta_b, theta_d]
         theta = torch.rand([n_out, n_in + 2])
         theta[:,-1] = theta[:,-1] * 100
         theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(torch.abs(theta[:, :-3]), axis=1) + torch.abs(theta[:,-1]))
         self.theta_ = torch.nn.Parameter(theta, requires_grad=True)
+        
+        # initialize aging model
+        self.aging_model = model
+        self.aging_parameter = self.aging_parameter_generator(n_out*(n_in+2), aging_model, params_approx)
         
         # for straight throught estimator
         self.st = g_straight_through.apply
@@ -29,7 +34,19 @@ class PNNLayer(torch.nn.Module):
         
     @property
     def theta(self):
-        return self.st(self.theta_)
+        return self.st(self.theta_aged)
+    
+    @property
+    def theta_aged(self, t):
+        if self.aging_model == 'exponent':
+            aging_decay = self.aging_parameter[:,0] * np.exp(self.aging_parameter[:,1] * t) + 1 - self.aging_parameter[:,0]
+        elif self.aging_model == 'linear':
+            aging_decay = torch.max(t * self.aging_parameter[:,0] + 1, t * self.aging_parameter[:,1] + self.aging_parameter[:,2])
+        s = theta.shape
+        theta_temp = theta.clone()
+        theta_temp = theta_temp.view(-1)
+        theta_temp *= aging_decay    
+        return theta_temp.view(s)
 
     @property
     def g(self):
@@ -121,7 +138,20 @@ class PNNLayer(torch.nn.Module):
         theta_temp = self.theta.where(self.theta <= g_max, torch.tensor(g_max))
         theta_temp = theta_temp.where(self.theta >= -g_max, torch.tensor(-g_max))
         self.theta = theta_temp
+    
+    def aging_parameter_generator(self, N, model, params_approx):
+        base_dist = lognorm
+        dists_exp = {c : base_dist(*base_dist.fit(params_approx[c].abs()/params_approx[c].std())) for c in params_approx.columns}
+        parameter = torch.tensor([dists_exp[c].rvs(N)*params_approx[c].std() for c in params_approx.columns]).T
+        print(temp)
+        if model == 'exp':
+            parameter[:, 1] = - parameter[:, 1]
+        elif model == 'linear':
+            parameter[:, :-1] = - parameter[:, :-1]
+        return parameter
         
+    
+    
 class g_straight_through(torch.autograd.Function):
     @staticmethod
     def forward(ctx, theta, g_min=0.01):
