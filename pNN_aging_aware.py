@@ -2,13 +2,12 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 import torch.nn.functional as F
-#import data
 import matplotlib.pyplot as plt
 
 
 
 class PNNLayer(torch.nn.Module):
-    def __init__(self, n_in, n_out, model, param_approx):
+    def __init__(self, n_in, n_out, aging_generator):
         '''
         Generate a PNN layer
         :param n_in: number of input of the layer
@@ -24,27 +23,30 @@ class PNNLayer(torch.nn.Module):
         self.theta_ = torch.nn.Parameter(theta, requires_grad=True)
         
         # initialize aging model
-        self.aging_model = model
-        self.aging_parameter = self.aging_parameter_generator(n_out*(n_in+2), aging_model, params_approx)
+        self.t = 0
+        self.model = aging_generator.get_models(n_out*(n_in+2))
         
         # for straight throught estimator
         self.st = g_straight_through.apply
         
-        #print(self.theta_)
-        
     @property
     def theta(self):
+        '''
+        put theta into straight through function
+        '''
         return self.st(self.theta_aged)
     
     @property
-    def theta_aged(self, t):
-        if self.aging_model == 'exponent':
-            aging_decay = self.aging_parameter[:,0] * np.exp(self.aging_parameter[:,1] * t) + 1 - self.aging_parameter[:,0]
-        elif self.aging_model == 'linear':
-            aging_decay = torch.max(t * self.aging_parameter[:,0] + 1, t * self.aging_parameter[:,1] + self.aging_parameter[:,2])
-        s = theta.shape
-        theta_temp = theta.clone()
-        theta_temp = theta_temp.view(-1)
+    def theta_aged(self):
+        '''
+        multiply theta_initial with the aging decay coefficient
+        '''
+        # generate aging decay coefficient
+        aging_decay = torch.tensor([m([self.t]) for m in self.model])
+        # multiply them
+        s = self.theta_.shape
+        theta_temp = self.theta_.clone()
+        theta_temp = theta_temp.view(-1,1)
         theta_temp *= aging_decay    
         return theta_temp.view(s)
 
@@ -120,12 +122,13 @@ class PNNLayer(torch.nn.Module):
         z_s = z.view(m, M).t()
         return z_s
 
-    def forward(self, a_previous):
+    def forward(self, a_previous, t):
         '''
         forward propagation: MAC and activation
         :param a: input of the layer
         :return: output of the layer
         '''
+        self.t = t
         z_new = self.mac(a_previous)
         a_new = self.activate(z_new)
         return a_new
@@ -137,24 +140,18 @@ class PNNLayer(torch.nn.Module):
         '''
         theta_temp = self.theta.where(self.theta <= g_max, torch.tensor(g_max))
         theta_temp = theta_temp.where(self.theta >= -g_max, torch.tensor(-g_max))
-        self.theta = theta_temp
-    
-    def aging_parameter_generator(self, N, model, params_approx):
-        base_dist = lognorm
-        dists_exp = {c : base_dist(*base_dist.fit(params_approx[c].abs()/params_approx[c].std())) for c in params_approx.columns}
-        parameter = torch.tensor([dists_exp[c].rvs(N)*params_approx[c].std() for c in params_approx.columns]).T
-        print(temp)
-        if model == 'exp':
-            parameter[:, 1] = - parameter[:, 1]
-        elif model == 'linear':
-            parameter[:, :-1] = - parameter[:, :-1]
-        return parameter
-        
+        self.theta = theta_temp        
     
     
 class g_straight_through(torch.autograd.Function):
+    '''
+    straight through is a special function, whoes forward and backward propagation are different.
+    '''
     @staticmethod
     def forward(ctx, theta, g_min=0.01):
+        '''
+        forward propagation is a piecewise linear function
+        '''
         theta = theta.clone()
         theta[theta.abs() < g_min] = 0.
         ctx.save_for_backward(theta)
@@ -162,6 +159,9 @@ class g_straight_through(torch.autograd.Function):
 
     @staticmethod
     def backward(ctx, grad_output):
+        '''
+        backward is a continuous linear function
+        '''
         return grad_output
 
 
