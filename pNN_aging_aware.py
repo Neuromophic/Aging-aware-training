@@ -34,7 +34,7 @@ class PNNLayer(torch.nn.Module):
         '''
         put theta into straight through function
         '''
-        return self.st(self.theta_aged)
+        return self.st(self.theta_)
     
     @property
     def theta_aged(self):
@@ -44,8 +44,8 @@ class PNNLayer(torch.nn.Module):
         # generate aging decay coefficient
         aging_decay = torch.tensor([m([self.t]) for m in self.model])
         # multiply them
-        s = self.theta_.shape
-        theta_temp = self.theta_.clone()
+        s = self.theta.shape
+        theta_temp = self.theta.clone()
         theta_temp = theta_temp.view(-1,1)
         theta_temp *= aging_decay    
         return theta_temp.view(s)
@@ -53,10 +53,10 @@ class PNNLayer(torch.nn.Module):
     @property
     def g(self):
         '''
-        Get the absolute value of the surrogate conductance theta
+        Get the absolute value of the surrogate conductance aged theta
         :return: absolute(theta)
         '''
-        g = self.theta
+        g = self.theta_aged
         return g.abs()
 
     def inv(self, x):
@@ -122,13 +122,12 @@ class PNNLayer(torch.nn.Module):
         z_s = z.view(m, M).t()
         return z_s
 
-    def forward(self, a_previous, t):
+    def forward(self, a_previous):
         '''
         forward propagation: MAC and activation
         :param a: input of the layer
         :return: output of the layer
         '''
-        self.t = t
         z_new = self.mac(a_previous)
         a_new = self.activate(z_new)
         return a_new
@@ -152,10 +151,10 @@ class g_straight_through(torch.autograd.Function):
         '''
         forward propagation is a piecewise linear function
         '''
-        theta = theta.clone()
-        theta[theta.abs() < g_min] = 0.
-        ctx.save_for_backward(theta)
-        return theta
+        theta_temp = theta.clone()
+        theta_temp[theta_temp.abs() < g_min] = 0.
+        ctx.save_for_backward(theta_temp)
+        return theta_temp
 
     @staticmethod
     def backward(ctx, grad_output):
