@@ -8,18 +8,18 @@ def OneHot(y, K):
         Y[int(y[0, i]), i] = 1
     return Y
 
-def GenerateData(plot=False):
-    x1 = np.random.randn(1, 20) * 0.3 + 1
-    y1 = np.random.randn(1, 20) * 0.3 + 1
+def GenerateData(var=0.3, plot=False):
+    x1 = np.random.randn(1, 20) * var + 1
+    y1 = np.random.randn(1, 20) * var + 1
     l1 = np.random.randn(1, 20) * 0 + 0
-    x2 = np.random.randn(1, 20) * 0.3 + 1
-    y2 = np.random.randn(1, 20) * 0.3 - 1
+    x2 = np.random.randn(1, 20) * var + 1
+    y2 = np.random.randn(1, 20) * var - 1
     l2 = np.random.randn(1, 20) * 0 + 1
-    x3 = np.random.randn(1, 20) * 0.3 - 1
-    y3 = np.random.randn(1, 20) * 0.3 + 1
+    x3 = np.random.randn(1, 20) * var - 1
+    y3 = np.random.randn(1, 20) * var + 1
     l3 = np.random.randn(1, 20) * 0 + 2
-    x4 = np.random.randn(1, 20) * 0.3 - 1
-    y4 = np.random.randn(1, 20) * 0.3 - 1
+    x4 = np.random.randn(1, 20) * var - 1
+    y4 = np.random.randn(1, 20) * var - 1
     l4 = np.random.randn(1, 20) * 0 + 3
     X1 = np.hstack((x1, x2, x3, x4))
     X2 = np.hstack((y1, y2, y3, y4))
