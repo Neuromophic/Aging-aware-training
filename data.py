@@ -8,24 +8,23 @@ def OneHot(y, K):
         Y[int(y[0, i]), i] = 1
     return Y
 
-def GenerateData(var=0.3, plot=False):
-    x1 = np.random.randn(1, 20) * var + 1
-    y1 = np.random.randn(1, 20) * var + 1
-    l1 = np.random.randn(1, 20) * 0 + 0
-    x2 = np.random.randn(1, 20) * var + 1
-    y2 = np.random.randn(1, 20) * var - 1
-    l2 = np.random.randn(1, 20) * 0 + 1
-    x3 = np.random.randn(1, 20) * var - 1
-    y3 = np.random.randn(1, 20) * var + 1
-    l3 = np.random.randn(1, 20) * 0 + 2
-    x4 = np.random.randn(1, 20) * var - 1
-    y4 = np.random.randn(1, 20) * var - 1
-    l4 = np.random.randn(1, 20) * 0 + 3
+def GenerateData(N=80, var=0.3, plot=False):
+    x1 = np.random.randn(1, int(N/4)) * var + 1
+    y1 = np.random.randn(1, int(N/4)) * var + 1
+    l1 = np.random.randn(1, int(N/4)) * 0 + 0
+    x2 = np.random.randn(1, int(N/4)) * var + 1
+    y2 = np.random.randn(1, int(N/4)) * var - 1
+    l2 = np.random.randn(1, int(N/4)) * 0 + 1
+    x3 = np.random.randn(1, int(N/4)) * var - 1
+    y3 = np.random.randn(1, int(N/4)) * var + 1
+    l3 = np.random.randn(1, int(N/4)) * 0 + 2
+    x4 = np.random.randn(1, int(N/4)) * var - 1
+    y4 = np.random.randn(1, int(N/4)) * var - 1
+    l4 = np.random.randn(1, int(N/4)) * 0 + 3
     X1 = np.hstack((x1, x2, x3, x4))
     X2 = np.hstack((y1, y2, y3, y4))
     X = np.vstack((X1, X2))
     y = np.hstack((l1, l2, l3, l4))
-    Y = OneHot(y, 4)
     if plot:
         plt.figure()
         plt.scatter(X[0, :], X[1, :], c=y)

@@ -9,7 +9,7 @@ def basic(nn, x, y, *args, **kwargs):
 
     return corrects.float().sum().item()/y.numel()
 
-def maa(nn, x, y, sensing_margin=.1):
+def maa(nn, x, y, sensing_margin=.01):
     ''' measure aware accuracy 
 
         nn : neural network
