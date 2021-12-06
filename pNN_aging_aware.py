@@ -24,11 +24,16 @@ class PNNLayer(torch.nn.Module):
         
         # initialize aging model
         self.t = 0
-        self.model = aging_generator.get_models(n_out*(n_in+2))
+        self.totalnum = n_out*(n_in+2)
+        self.aging_generator = aging_generator
+        self.generate_aging_model()
         
         # for straight throught estimator
         self.st = g_straight_through.apply
         
+    def generate_aging_model(self):
+        self.model = self.aging_generator.get_models(self.totalnum)
+    
     @property
     def theta(self):
         '''
@@ -58,7 +63,7 @@ class PNNLayer(torch.nn.Module):
         '''
         g = self.theta_aged
         return g.abs()
-
+    
     def inv(self, x):
         '''
         Quasi-negative value of x
@@ -117,7 +122,7 @@ class PNNLayer(torch.nn.Module):
         W_temp = W.view(m, n, 1)
 
         # multiply x or inv(x) with w, each layer is corresponding to one output neuron
-        z = torch.matmul(X_sum, W_temp)
+        z = torch.matmul(X_sum.double(), W_temp.double())
         # resize
         z_s = z.view(m, M).t()
         return z_s

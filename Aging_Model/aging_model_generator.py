@@ -7,8 +7,7 @@ class Aging_model_generator():
     
     def _get_param_sample(self):
         ''' samples from the param distributions '''
-        return np.array([self.dist[c].rvs(1)*self.param_data[c].std() 
-                         for c in self.param_data.columns]).ravel()
+        return np.array([self.dist[c].rvs(1, np.random.randint(0,10000))*self.param_data[c].std() for c in self.param_data.columns]).ravel()
     
     @staticmethod
     def transform_sample(x):

@@ -4,7 +4,6 @@ def basic(nn, x, y, *args, **kwargs):
     ''' no sensing marigin considere ''' 
 
     act, idx = torch.max(nn(x), dim=1)
-
     corrects = (y.view(-1) == idx)
 
     return corrects.float().sum().item()/y.numel()
