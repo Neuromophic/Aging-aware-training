@@ -230,7 +230,9 @@ def ParallelTrainingAAPNN(AAPNN, train_loader, test_loader, optimizer, lossfunct
         if not epoch % 10:
             print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_temp:.5f} | Loss: {loss_temp:.9f} |')
         
-        test_loss.append(loss_temp)
+        test_loss = np.loadtxt('./temp/test_loss.txt')
+        np.append(test_loss, loss_temp)
+        np.savetxt('./temp/test_loss.txt', test_loss)
         if loss_temp < best_loss:
             parameter = copy.deepcopy(AAPNN.state_dict())
             
