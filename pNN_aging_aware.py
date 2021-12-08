@@ -47,7 +47,7 @@ class PNNLayer(torch.nn.Module):
         multiply theta_initial with the aging decay coefficient
         '''
         # generate aging decay coefficient
-        aging_decay = torch.tensor([m([self.t]) for m in self.model])
+        aging_decay = torch.tensor(np.array([m([self.t]) for m in self.model]))
         # multiply them
         s = self.theta.shape
         theta_temp = self.theta.clone()
