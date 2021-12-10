@@ -100,6 +100,7 @@ class PNNLayer(torch.nn.Module):
 
         # calculate the negative a, i.e. inv(a)
         InvX = self.inv(a)
+        # InvX[:,-1] = torch.tensor(0)
 
         # repeat input matrix m times to m layers, each layer is for one combination of theta
         X_repeat = a.repeat(m, 1, 1)
