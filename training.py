@@ -64,6 +64,10 @@ def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunctio
         if loss_test.data < best_test_loss:
             best_test_loss = loss_test.data
             myparameter = copy.deepcopy(nn.state_dict())
+            
+            with open('./temp/PNN.p', 'wb') as f:
+                pickle.dump(nn, f)
+                
         mytestloss.append(copy.deepcopy(loss_test.data))
         
         if not epoch % 100:
@@ -234,8 +238,8 @@ def ParallelTrainingAAPNN(AAPNN, train_loader, test_loader, optimizer, lossfunct
         if loss_temp < best_loss:
             parameter = copy.deepcopy(AAPNN.state_dict())
             
-            with open('./temp/parameter_AAPNN.p', 'wb') as f:
-                pickle.dump(parameter, f)
+            with open('./temp/AAPNN.p', 'wb') as f:
+                pickle.dump(AAPNN, f)
         
     return test_loss, parameter
         
