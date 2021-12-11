@@ -21,7 +21,9 @@ class PNNLayer(torch.nn.Module):
         theta[:,-1] = theta[:,-1] * 100
         theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(torch.abs(theta[:, :-3]), axis=1) + torch.abs(theta[:,-1]))
         self.theta_ = torch.nn.Parameter(theta, requires_grad=True)
-        self.lock = False
+        
+        # initialize time
+        self.t = [0]
         
         # initialize aging model
         self.totalnum = n_out*(n_in+2)
@@ -33,12 +35,6 @@ class PNNLayer(torch.nn.Module):
     def GenerateAgingModel(self, M=1):
         self.models = [self.aging_generator.get_models(self.totalnum) for o in range(M)]
     
-    def Lock(self):
-        self.lock = True
-    
-    def Unlock(self):
-        self.lock = False
-    
     @property
     def theta(self):
         '''
@@ -47,18 +43,15 @@ class PNNLayer(torch.nn.Module):
         return self.st(self.theta_)
 
     
-    def theta_aged(self, model, t=[0]):
+    def theta_aged(self, model):
         '''
         multiply theta_initial with the aging decay coefficient
         '''
-        if self.lock:
-            t = [0]
-        
         s = list(self.theta.shape)
-        s.insert(0,len(t))  # s = [K, n_out, n_in]
+        s.insert(0,len(self.t))  # s = [K, n_out, n_in]
         
         # generate aging decay coefficient [K, n_out, n_in]
-        aging_decay = torch.tensor(np.array([m(t) for m in model])).T.reshape(s)
+        aging_decay = torch.tensor(np.array([m(self.t) for m in model])).T.reshape(s)
         
         theta_temp = self.theta * aging_decay  # shape [K, n_out, n_in]
         return theta_temp
@@ -70,7 +63,7 @@ class PNNLayer(torch.nn.Module):
         Get the absolute value of the surrogate conductance aged theta
         :return: absolute(theta)
         '''
-        g = torch.cat([self.theta_aged(model, torch.rand(self.K))[None,:,:,:] for model in self.models])
+        g = torch.cat([self.theta_aged(model)[None,:,:,:] for model in self.models])
         return g.abs()
     
     def inv(self, x):
@@ -131,7 +124,7 @@ class PNNLayer(torch.nn.Module):
         pos_X_repeat = torch.mul(X_repeat, postheta)
         neg_X_repeat = torch.mul(InvX_repeat, negtheta)
         X_sum = pos_X_repeat + neg_X_repeat  # [M, K, n_out, E, n_in+2]
-
+        
         # each row of weights was put to each corresponding layer
         W_temp = W[:,:,:,:,None].type(torch.float32) # [M, K, n_out, n_in+2, 1]
 
@@ -192,14 +185,11 @@ def LossFunction(prediction, label, m, T):
     return L
 
 
+
 def MakeModel(m, M=1):
     if isinstance(m, PNNLayer):
         m.GenerateAgingModel(M)
-        
-def LockTime(m):
+
+def SetTime(m, t):
     if isinstance(m, PNNLayer):
-        m.Lock()
-        
-def UnlockTime(m):
-    if isinstance(m, PNNLayer):
-        m.Unlock()
+        m.t = t
