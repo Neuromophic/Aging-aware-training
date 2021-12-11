@@ -236,6 +236,7 @@ def ParallelTrainingAAPNN(AAPNN, train_loader, test_loader, optimizer, lossfunct
         
         test_loss.append(loss_temp)
         if loss_temp < best_loss:
+            best_loss = loss_temp
             parameter = copy.deepcopy(AAPNN.state_dict())
             
             with open('./temp/AAPNN.p', 'wb') as f:
