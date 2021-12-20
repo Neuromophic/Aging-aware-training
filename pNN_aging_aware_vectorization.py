@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 class PNNLayer(torch.nn.Module):
-    def __init__(self, n_in, n_out, aging_generator):
+    def __init__(self, n_in, n_out, aging_generator, xpu='cpu'):
         '''
         Generate a PNN layer
         :param n_in: number of input of the layer
@@ -21,6 +21,9 @@ class PNNLayer(torch.nn.Module):
         theta[:,-1] = theta[:,-1] * 100
         theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(torch.abs(theta[:, :-3]), axis=1) + torch.abs(theta[:,-1]))
         self.theta_ = torch.nn.Parameter(theta, requires_grad=True)
+        
+        # initializ CPU/GPU
+        self.xpu = xpu
         
         # initialize time
         self.t = [0]
@@ -53,7 +56,7 @@ class PNNLayer(torch.nn.Module):
         # generate aging decay coefficient [K, n_out, n_in]
         aging_decay = torch.tensor(np.array([m(self.t) for m in model])).T.reshape(s)
         
-        theta_temp = self.theta * aging_decay  # shape [K, n_out, n_in]
+        theta_temp = self.theta * aging_decay.to(self.xpu)  # shape [K, n_out, n_in]
         return theta_temp
     
     
@@ -98,7 +101,7 @@ class PNNLayer(torch.nn.Module):
 
         # enlarge for parameter b and d
         # a changes from [M, K, E, n_in] to [M, K, E, n_in+2]
-        a = torch.cat([a, torch.ones(self.M, self.K, E, 1), torch.zeros(self.M, self.K, E, 1)], dim=3)
+        a = torch.cat([a, torch.ones(self.M, self.K, E, 1).to(self.xpu), torch.zeros(self.M, self.K, E, 1).to(self.xpu)], dim=3)
         
         # calculate the negative a, i.e. inv(a)
         InvX = self.inv(a)
@@ -185,7 +188,6 @@ def LossFunction(prediction, label, m, T):
     return L
 
 
-
 def MakeModel(m, M=1):
     if isinstance(m, PNNLayer):
         m.GenerateAgingModel(M)
@@ -193,3 +195,7 @@ def MakeModel(m, M=1):
 def SetTime(m, t):
     if isinstance(m, PNNLayer):
         m.t = t
+
+def SetDevice(m, xpu):
+    if isinstance(m, PNNLayer):
+        m.xpu = xpu
