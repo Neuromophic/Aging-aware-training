@@ -12,6 +12,7 @@ def train_normal_nn(nn, train_loader, test_loader, optimizer, lossfunction, Epoc
     myparameter = copy.deepcopy(nn.state_dict())
     mytrainloss = []
     mytestloss = []
+    averager = [100000]
     best_test_loss = 100000
     
     for epoch in tqdm(range(Epoch)):
@@ -33,11 +34,19 @@ def train_normal_nn(nn, train_loader, test_loader, optimizer, lossfunction, Epoc
         if loss_test.data < best_test_loss:
             best_test_loss = loss_test.data
             myparameter = copy.deepcopy(nn.state_dict())
-        mytestloss.append(loss_test.cpu().data)
+        mytestloss.append(loss_test.cpu().data.item())
         
-        if not epoch % 200:
-            print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test.data:.9f} |')
         
+        if not epoch % 500:
+                print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test.data:.9f}')
+                
+        if epoch >= Epoch*0.2:
+            if not epoch % 100:
+                averager.append(np.mean(mytestloss[-5000::100] * np.linspace(0,1,50)))
+            if averager[-2] <= averager[-1]:
+                print('Early stop.')
+                break
+                
     print('Finished.')
     return mytrainloss, mytestloss, myparameter
 
@@ -47,6 +56,7 @@ def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunctio
     myparameter = copy.deepcopy(nn.state_dict())
     mytrainloss = []
     mytestloss = []
+    averager = [100000]
     best_test_loss = 100000
     
     for epoch in tqdm(range(Epoch)):
@@ -60,7 +70,7 @@ def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunctio
             loss.backward()
             optimizer.step()
             
-        mytrainloss.append(copy.deepcopy(loss.cpu().data))
+        mytrainloss.append(copy.deepcopy(loss.cpu().data.item()))
         
         with torch.no_grad():
             for x_test, y_test in test_loader:
@@ -80,10 +90,17 @@ def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunctio
             with open(f'./temp/{cache}_PNN.p', 'wb') as f:
                 pickle.dump(nn, f)
                 
-        mytestloss.append(copy.deepcopy(loss_test.cpu().data))
+        mytestloss.append(copy.deepcopy(loss_test.cpu().data.item()))
         
-        if not epoch % 200:
+        if not epoch % 500:
             print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test.data:.9f} |')
+        
+        if epoch >= Epoch*0.2:
+            if not epoch % 100:
+                averager.append(np.mean(mytestloss[-5000::100] * np.linspace(0,1,50)))
+            if averager[-2] <= averager[-1]:
+                print('Early stop.')
+                break
         
     print('Finished.')
     return mytrainloss, mytestloss, myparameter
@@ -111,7 +128,7 @@ def train_aged_pnn(nn, train_loader, test_loader, m, T, M, K, M_test, K_test, op
 
             optimizer.step()  
             
-        mytrainloss.append(loss.cpu().data)
+        mytrainloss.append(loss.cpu().data.item())
         
         with torch.no_grad():
             for x_test, y_test in test_loader:
@@ -134,9 +151,9 @@ def train_aged_pnn(nn, train_loader, test_loader, m, T, M, K, M_test, K_test, op
             with open(f'./temp/{cache}_AAPNN.p', 'wb') as f:
                 pickle.dump(nn, f)
             
-        mytestloss.append(loss_test.cpu().data)
+        mytestloss.append(loss_test.cpu().data.item())
         
-        if not epoch % 10:
+        if not epoch % int(Epoch/20):
             print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test:.9f} |')
             
     print('Finished.')
