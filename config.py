@@ -7,7 +7,7 @@ datasets.sort()
 
 current_dataset = 12
 
-lr = 0.01
+lr = 0.1
 
 data_split_seed = 0
 
