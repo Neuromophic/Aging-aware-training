@@ -18,3 +18,4 @@ Red      = np.array([162, 34, 35]) / 255
 liste    = np.array([Green, Pink,     Blue,   Braun,
                      Black, Gray,     Cyan,   Orange,
                      Lila,  Maigreen, Yellow, Red])
+
