@@ -95,7 +95,7 @@ def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunctio
         if not epoch % 500:
             print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test.data:.9f} |')
         
-        if epoch >= Epoch*0.2:
+        if epoch >= Epoch*0.4:
             if not epoch % 100:
                 averager.append(np.mean(mytestloss[-5000::100] * np.linspace(0,1,50)))
             if averager[-2] <= averager[-1]:

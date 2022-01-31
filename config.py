@@ -5,9 +5,13 @@ files = os.listdir(path)
 datasets = [k.replace('Dataset_','').replace('.p','') for k in files if k.startswith('Dataset_')]
 datasets.sort()
 
-current_dataset = 4
+current_dataset = 11
 
 lr = 0.1
+
+AAPNN_lr_1 = 0.05
+AAPNN_lr_2 = 0.05
+AAPNN_lr_3 = 0.01
 
 data_split_seed = 0
 
