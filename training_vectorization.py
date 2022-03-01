@@ -8,13 +8,25 @@ from tqdm.notebook import tqdm
 import pickle
 
 
-def train_normal_nn(nn, train_loader, test_loader, optimizer, lossfunction, Epoch=500):
-    myparameter = copy.deepcopy(nn.state_dict())
-    mytrainloss = []
-    mytestloss = []
+def train_normal_nn(nn, train_loader, valid_loader, optimizer, lossfunction, Epoch=500):
+    '''
+    trainig of normal NN from PyTorch-default
+    :param nn: NN
+    :param train_loader: data loader for training data
+    :param valid_loader: data loader for validation data
+    :param optimizer: optimizer
+    :param lossfunction: loss function
+    :param Epoch: max. epochs
+    :return: training loss, validation loss, best parameter
+    '''
+    # initialization
+    best_parameter = copy.deepcopy(nn.state_dict())
+    train_loss = []
+    valid_loss = []
     averager = [100000]
-    best_test_loss = 100000
-    
+    best_valid_loss = 100000
+
+    # training
     for epoch in tqdm(range(Epoch)):
         for x_train, y_train in train_loader:
             optimizer.zero_grad()
@@ -22,43 +34,59 @@ def train_normal_nn(nn, train_loader, test_loader, optimizer, lossfunction, Epoc
             loss = lossfunction(prediction, y_train)
             loss.backward()
             optimizer.step()
-        mytrainloss.append(loss.cpu().data)
-        
-        with torch.no_grad():
-            for x_test, y_test in test_loader:
-                prediction_test = nn(x_test)
-                y_hat = torch.argmax(prediction_test, 1).cpu().data.numpy().squeeze()
-                acc_test = sum(y_hat == y_test.cpu().numpy()) / y_test.shape[0]
-                loss_test = lossfunction(prediction_test, y_test)
+        train_loss.append(loss.cpu().data)
 
-        if loss_test.data < best_test_loss:
-            best_test_loss = loss_test.data
-            myparameter = copy.deepcopy(nn.state_dict())
-        mytestloss.append(loss_test.cpu().data.item())
+        # validation
+        with torch.no_grad():
+            for x_valid, y_valid in valid_loader:
+                prediction_valid = nn(x_valid)
+                y_hat = torch.argmax(prediction_valid, 1).cpu().data.numpy().squeeze()
+                acc_valid = sum(y_hat == y_valid.cpu().numpy()) / y_valid.shape[0]
+                loss_valid = lossfunction(prediction_valid, y_valid)
+        # save best parameter
+        if loss_valid.data < best_valid_loss:
+            best_valid_loss = loss_valid.data
+            best_parameter = copy.deepcopy(nn.state_dict())
+        valid_loss.append(loss_valid.cpu().data.item())
         
         
         if not epoch % 500:
-                print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test.data:.9f}')
+                print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_valid:.5f} | Loss: {loss_valid.data:.9f}')
                 
         if epoch >= Epoch*0.2:
             if not epoch % 100:
-                averager.append(np.mean(mytestloss[-5000::100] * np.linspace(0,1,50)))
+                averager.append(np.mean(valid_loss[-5000::100] * np.linspace(0,1,50)))
             if averager[-2] <= averager[-1]:
                 print('Early stop.')
                 break
                 
     print('Finished.')
-    return mytrainloss, mytestloss, myparameter
+    return train_loss, valid_loss, best_parameter
 
 
 
-def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunction, Epoch=500, cache='default'):
-    myparameter = copy.deepcopy(nn.state_dict())
-    mytrainloss = []
-    mytestloss = []
+def train_normal_pnn(nn, train_loader, valid_loader, m, T, optimizer, lossfunction, Epoch=500, cache='default'):
+    '''
+    nominal training for pNN
+    :param nn: pNN
+    :param train_loader: data loader for training data
+    :param valid_loader: data loader for validation data
+    :param m: sensing margin
+    :param T: sensing related hyperparameter
+    :param optimizer: optimizer
+    :param lossfunction: loss function
+    :param Epoch: max. epochs
+    :param cache: path to save cache data
+    :return: 
+    '''
+    # initialization
+    best_parameter = copy.deepcopy(nn.state_dict())
+    train_loss = []
+    valid_loss = []
     averager = [100000]
-    best_test_loss = 100000
-    
+    best_valid_loss = 100000
+
+    # training
     for epoch in tqdm(range(Epoch)):
         for x_train, y_train in train_loader:
             optimizer.zero_grad()
@@ -70,47 +98,66 @@ def train_normal_pnn(nn, train_loader, test_loader, m, T, optimizer, lossfunctio
             loss.backward()
             optimizer.step()
             
-        mytrainloss.append(copy.deepcopy(loss.cpu().data.item()))
-        
+        train_loss.append(copy.deepcopy(loss.cpu().data.item()))
+
+        # validation
         with torch.no_grad():
-            for x_test, y_test in test_loader:
-                xv_test = x_test.repeat(1,1,1,1)
-                prediction_test = nn(xv_test)
+            for x_valid, y_valid in valid_loader:
+                xv_valid = x_valid.repeat(1,1,1,1)
+                prediction_valid = nn(xv_valid)
 
-                loss_test = lossfunction(prediction_test, y_test, m, T)
+                loss_valid = lossfunction(prediction_valid, y_valid, m, T)
 
-                y_hat = torch.argmax(prediction_test, 3).cpu().flatten().data.numpy().squeeze()
-                y_test = y_test.repeat(1,1,1).cpu().flatten().data.numpy().squeeze()
-                acc_test = sum(y_hat == y_test) / y_test.shape[0]
+                y_hat = torch.argmax(prediction_valid, 3).cpu().flatten().data.numpy().squeeze()
+                y_valid = y_valid.repeat(1,1,1).cpu().flatten().data.numpy().squeeze()
+                acc_valid = sum(y_hat == y_valid) / y_valid.shape[0]
 
-        if loss_test.data < best_test_loss:
-            best_test_loss = loss_test.data
-            myparameter = copy.deepcopy(nn.state_dict())
-            
+        # save best parameter
+        if loss_valid.data < best_valid_loss:
+            best_valid_loss = loss_valid.data
+            best_parameter = copy.deepcopy(nn.state_dict())
+            # save cache
             with open(f'./temp/{cache}_PNN.p', 'wb') as f:
                 pickle.dump(nn, f)
                 
-        mytestloss.append(copy.deepcopy(loss_test.cpu().data.item()))
+        valid_loss.append(copy.deepcopy(loss_valid.cpu().data.item()))
         
         if not epoch % 500:
-            print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test.data:.9f} |')
+            print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_valid:.5f} | Loss: {loss_valid.data:.9f} |')
         
         if epoch >= Epoch*0.4:
             if not epoch % 100:
-                averager.append(np.mean(mytestloss[-5000::100] * np.linspace(0,1,50)))
+                averager.append(np.mean(valid_loss[-5000::100] * np.linspace(0,1,50)))
             if averager[-2] <= averager[-1]:
                 print('Early stop.')
                 break
         
     print('Finished.')
-    return mytrainloss, mytestloss, myparameter
+    return train_loss, valid_loss, best_parameter
 
 
-def train_aged_pnn(nn, train_loader, test_loader, m, T, M, K, M_test, K_test, optimizer, lossfunction, Epoch=500, cache='default'):
-    myparameter = copy.deepcopy(nn.state_dict())
-    mytestloss = []
-    mytrainloss = []
-    best_test_loss = 1000
+def train_aged_pnn(nn, train_loader, valid_loader, m, T, M, K, M_valid, K_valid, optimizer, lossfunction, Epoch=500, cache='default'):
+    '''
+    aging aware training for pNN
+    :param nn: pNN
+    :param train_loader: data loader for training data
+    :param valid_loader: data loader for validation data
+    :param m: sensing margin
+    :param T: sensing related hyperparameter
+    :param M: number of aging models in training
+    :param K: number of timings in training
+    :param M_valid: number of aging models in validation
+    :param K_valid: number of timings in validation
+    :param optimizer: optimizer
+    :param lossfunction: loss function
+    :param Epoch: max. epochs
+    :param cache: path for saving cache data
+    :return: training loss, validation loss, best parameters
+    '''
+    best_parameter = copy.deepcopy(nn.state_dict())
+    valid_loss = []
+    train_loss = []
+    best_valid_loss = 1000
     
     for epoch in tqdm(range(Epoch)):
 
@@ -128,35 +175,35 @@ def train_aged_pnn(nn, train_loader, test_loader, m, T, M, K, M_test, K_test, op
 
             optimizer.step()  
             
-        mytrainloss.append(loss.cpu().data.item())
+        train_loss.append(loss.cpu().data.item())
         
         with torch.no_grad():
-            for x_test, y_test in test_loader:
-                nn.apply(lambda z: pnnv.MakeModel(z, M=M_test))
-                nn.apply(lambda z: pnnv.SetTime(z, np.random.rand(K_test).tolist()))
+            for x_valid, y_valid in valid_loader:
+                nn.apply(lambda z: pnnv.MakeModel(z, M=M_valid))
+                nn.apply(lambda z: pnnv.SetTime(z, np.random.rand(K_valid).tolist()))
 
-                xv_test = x_test.repeat(M_test,K_test,1,1)
-                prediction_test = nn(xv_test)
+                xv_valid = x_valid.repeat(M_valid,K_valid,1,1)
+                prediction_valid = nn(xv_valid)
 
-                loss_test = lossfunction(prediction_test, y_test, m, T)
+                loss_valid = lossfunction(prediction_valid, y_valid, m, T)
 
-                y_hat = torch.argmax(prediction_test, 3).flatten().cpu().data.numpy().squeeze()
-                y_test = y_test.repeat(M_test,K_test,1).flatten().cpu().data.numpy().squeeze()
-                acc_test = sum(y_hat == y_test) / y_test.shape[0]
+                y_hat = torch.argmax(prediction_valid, 3).flatten().cpu().data.numpy().squeeze()
+                y_valid = y_valid.repeat(M_valid,K_valid,1).flatten().cpu().data.numpy().squeeze()
+                acc_valid = sum(y_hat == y_valid) / y_valid.shape[0]
         
-        if loss_test.data < best_test_loss:
-            best_test_loss = loss_test.data
-            myparameter = copy.deepcopy(nn.state_dict())
+        if loss_valid.data < best_valid_loss:
+            best_valid_loss = loss_valid.data
+            best_parameter = copy.deepcopy(nn.state_dict())
             
             with open(f'./temp/{cache}_AAPNN.p', 'wb') as f:
                 pickle.dump(nn, f)
             
-        mytestloss.append(loss_test.cpu().data.item())
+        valid_loss.append(loss_valid.cpu().data.item())
         
         if not epoch % int(Epoch/20):
-            print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_test:.5f} | Loss: {loss_test:.9f} |')
+            print(f'| Epoch: {epoch:-5d} | Accuracy: {acc_valid:.5f} | Loss: {loss_valid:.9f} |')
             
     print('Finished.')
-    return mytrainloss, mytestloss, myparameter
+    return train_loss, valid_loss, best_parameter
 
         

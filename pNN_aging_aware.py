@@ -5,7 +5,6 @@ import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
 
-
 class PNNLayer(torch.nn.Module):
     def __init__(self, n_in, n_out, aging_generator):
         '''
@@ -18,29 +17,29 @@ class PNNLayer(torch.nn.Module):
         # theta is [n_out , n_in + 2] vector. Plus two -> 1 for bias, 1 for decouple
         # a row of theta consists of [theta_1, theta_2, ..., theta_{n_in}, theta_b, theta_d]
         theta = torch.rand([n_out, n_in + 2])
-        theta[:,-1] = theta[:,-1] * 100
-        theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(torch.abs(theta[:, :-3]), axis=1) + torch.abs(theta[:,-1]))
+        theta[:, -1] = theta[:, -1] * 100
+        theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(torch.abs(theta[:, :-3]), axis=1) + torch.abs(theta[:, -1]))
         self.theta_ = torch.nn.Parameter(theta, requires_grad=True)
-        
+
         # initialize aging model
         self.t = 0
-        self.totalnum = n_out*(n_in+2)
+        self.totalnum = n_out * (n_in + 2)
         self.aging_generator = aging_generator
         self.generate_aging_model()
-        
+
         # for straight throught estimator
         self.st = g_straight_through.apply
-        
+
     def generate_aging_model(self):
         self.model = self.aging_generator.get_models(self.totalnum)
-    
+
     @property
     def theta(self):
         '''
         put theta into straight through function
         '''
         return self.st(self.theta_)
-    
+
     @property
     def theta_aged(self):
         '''
@@ -51,8 +50,8 @@ class PNNLayer(torch.nn.Module):
         # multiply them
         s = self.theta.shape
         theta_temp = self.theta.clone()
-        theta_temp = theta_temp.view(-1,1)
-        theta_temp *= aging_decay    
+        theta_temp = theta_temp.view(-1, 1)
+        theta_temp *= aging_decay
         return theta_temp.view(s)
 
     @property
@@ -63,7 +62,7 @@ class PNNLayer(torch.nn.Module):
         '''
         g = self.theta_aged
         return g.abs()
-    
+
     def inv(self, x):
         '''
         Quasi-negative value of x
@@ -145,13 +144,14 @@ class PNNLayer(torch.nn.Module):
         '''
         theta_temp = self.theta.where(self.theta <= g_max, torch.tensor(g_max))
         theta_temp = theta_temp.where(self.theta >= -g_max, torch.tensor(-g_max))
-        self.theta = theta_temp        
-    
-    
+        self.theta = theta_temp
+
+
 class g_straight_through(torch.autograd.Function):
     '''
     straight through is a special function, whoes forward and backward propagation are different.
     '''
+
     @staticmethod
     def forward(ctx, theta, g_min=0.01):
         '''
@@ -179,5 +179,3 @@ def LossFunction(prediction, label, m, T):
     l = torch.max(m + T - fy, torch.tensor(0)) + torch.max(m + fnym, torch.tensor(0))
     L = torch.mean(l)
     return L
-
-
