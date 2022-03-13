@@ -2,6 +2,7 @@ import torch
 import pNN_aging_aware_vectorization as pnnv
 from tqdm.notebook import tqdm
 import numpy as np
+import config
 
 
 def ACC(prediction, target, device):
@@ -68,6 +69,7 @@ def Evaluation(nn, test_loader, M_test, M_max, K_test, device):
     # initialization for acc and maa
     accs = []
     maas = []
+    losses = []
 
     # set device and timing
     nn.apply(lambda z: pnnv.SetDevice(z, device))
@@ -88,7 +90,11 @@ def Evaluation(nn, test_loader, M_test, M_max, K_test, device):
                 prediction = nn(xv_test)
                 # vectorization of testing labels
                 yv_test = y_test.repeat(M_max, K_test, 1)
-
+                
+                # save loss
+                loss_temp = pnnv.LossFunction(prediction, y_test, dimension=[0,2])[0].item()
+                losses.append(loss_temp)
+                
                 # calculate maa and acc
                 acc = ACC(prediction, yv_test, device)
                 maa = MAA(prediction, yv_test, device)
@@ -105,8 +111,9 @@ def Evaluation(nn, test_loader, M_test, M_max, K_test, device):
 
     mean_maa = np.mean(maa, axis=0).flatten()
     std_maa = np.std(maa, axis=0).flatten()
-
-    return mean_acc, std_acc, mean_maa, std_maa
+    
+    loss = np.mean(losses)
+    return mean_acc, std_acc, mean_maa, std_maa, loss
 
 
 def GetStructure(nn):

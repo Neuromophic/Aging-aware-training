@@ -3,7 +3,7 @@ import torch
 from torch.autograd import Variable
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
-
+import config
 
 class PNNLayer(torch.nn.Module):
     def __init__(self, n_in, n_out, aging_generator, xpu='cpu'):
@@ -168,7 +168,7 @@ class g_straight_through(torch.autograd.Function):
         return grad_output
 
 
-def LossFunction(prediction, label, m, T):
+def LossFunction(prediction, label, dimension=None, m=config.m, T=config.T):
     '''
     loss function for vectorized pNN
     :param prediction: predictions from pNN
@@ -197,9 +197,13 @@ def LossFunction(prediction, label, m, T):
 
     # losses of E examples in M*E aging-situations
     l = torch.max(m + T - fy, torch.tensor(0)) + torch.max(m + fnym, torch.tensor(0))  # [M, K, E]
-
-    # average all losses as the final loss
-    L = torch.mean(l)  # L is a single value
+    
+    if dimension is None:
+        # average all losses as the final loss
+        L = torch.mean(l)  # L is a single value
+    else:
+        # this loss if for analysing loss and time, not for backpropagation
+        L = torch.mean(l, dim=dimension)
     return L
 
 

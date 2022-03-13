@@ -7,15 +7,10 @@ datasets = [k.replace('Dataset_', '').replace('.p', '') for k in files if k.star
 datasets.sort()
 
 # which dataset is selected
-current_dataset = 9
+current_dataset = 12
 
-# learning-rate for nominal training
+# learning-rate
 lr = 0.1
-
-# learning-rates for aging-aware training
-AAPNN_lr_1 = 0.05
-AAPNN_lr_2 = 0.05
-AAPNN_lr_3 = 0.01
 
 # random seed for data-split
 data_split_seed = 0
