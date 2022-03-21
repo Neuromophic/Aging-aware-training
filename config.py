@@ -7,7 +7,7 @@ datasets = [k.replace('Dataset_', '').replace('.p', '') for k in files if k.star
 datasets.sort()
 
 # which dataset is selected
-current_dataset = 12
+current_dataset = 9
 
 # learning-rate
 lr = 0.1
@@ -29,3 +29,6 @@ M_valid = 20
 K_valid = 10
 M_test = 500
 K_test = 50
+
+# extension to topology
+Topology = 12

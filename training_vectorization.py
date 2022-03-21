@@ -94,7 +94,7 @@ def train_normal_pnn(nn, train_loader, valid_loader, m, T, optimizer, lossfuncti
             xv_train = x_train.repeat(1,1,1,1)
             prediction = nn(xv_train)
             
-            loss = lossfunction(prediction, y_train, m, T)
+            loss = lossfunction(prediction, y_train)
             loss.backward()
             optimizer.step()
             
@@ -106,7 +106,7 @@ def train_normal_pnn(nn, train_loader, valid_loader, m, T, optimizer, lossfuncti
                 xv_valid = x_valid.repeat(1,1,1,1)
                 prediction_valid = nn(xv_valid)
 
-                loss_valid = lossfunction(prediction_valid, y_valid, m, T)
+                loss_valid = lossfunction(prediction_valid, y_valid)
 
                 y_hat = torch.argmax(prediction_valid, 3).cpu().flatten().data.numpy().squeeze()
                 y_valid = y_valid.repeat(1,1,1).cpu().flatten().data.numpy().squeeze()
@@ -170,7 +170,7 @@ def train_aged_pnn(nn, train_loader, valid_loader, m, T, M, K, M_valid, K_valid,
             xv_train = x_train.repeat(M,K,1,1)
             prediction = nn(xv_train)
 
-            loss = lossfunction(prediction, y_train, m, T)
+            loss = lossfunction(prediction, y_train)
             loss.backward()
 
             optimizer.step()  
@@ -185,7 +185,7 @@ def train_aged_pnn(nn, train_loader, valid_loader, m, T, M, K, M_valid, K_valid,
                 xv_valid = x_valid.repeat(M_valid,K_valid,1,1)
                 prediction_valid = nn(xv_valid)
 
-                loss_valid = lossfunction(prediction_valid, y_valid, m, T)
+                loss_valid = lossfunction(prediction_valid, y_valid)
 
                 y_hat = torch.argmax(prediction_valid, 3).flatten().cpu().data.numpy().squeeze()
                 y_valid = y_valid.repeat(M_valid,K_valid,1).flatten().cpu().data.numpy().squeeze()
