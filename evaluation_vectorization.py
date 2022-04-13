@@ -55,7 +55,7 @@ def MAA(prediction, target, device, sensing_margin=.01):
     return acc.squeeze().cpu().numpy()
 
 
-def Evaluation(nn, test_loader, M_test, M_max, K_test, device):
+def Evaluation(nn, test_loader, M_test, M_max, K_test, device, T=1):
     '''
     calculate maa and acc
     :param nn: neural network
@@ -73,7 +73,7 @@ def Evaluation(nn, test_loader, M_test, M_max, K_test, device):
 
     # set device and timing
     nn.apply(lambda z: pnnv.SetDevice(z, device))
-    nn.apply(lambda z: pnnv.SetTime(z, np.linspace(0, 1, K_test).tolist()))
+    nn.apply(lambda z: pnnv.SetTime(z, np.linspace(0, T, K_test).tolist()))
 
     # how many iteration do we need to reach M_test
     Iteration = int(M_test / M_max)
