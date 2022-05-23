@@ -7,7 +7,7 @@ datasets = [k.replace('Dataset_', '').replace('.p', '') for k in files if k.star
 datasets.sort()
 
 # which dataset is selected
-current_dataset = 12
+current_dataset = 5
 
 # learning-rate
 lr = 0.1
