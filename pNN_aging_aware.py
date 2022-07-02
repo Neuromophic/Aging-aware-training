@@ -18,7 +18,7 @@ class PNNLayer(torch.nn.Module):
         # a row of theta consists of [theta_1, theta_2, ..., theta_{n_in}, theta_b, theta_d]
         theta = torch.rand([n_out, n_in + 2])
         theta[:, -1] = theta[:, -1] * 100
-        theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(torch.abs(theta[:, :-3]), axis=1) + torch.abs(theta[:, -1]))
+        theta[:, -2] = 0.1788 / (1 - 0.1788) * (torch.sum(theta[:, :-2], axis=1) + theta[:, -1])
         self.theta_ = torch.nn.Parameter(theta, requires_grad=True)
 
         # initialize aging model
@@ -99,7 +99,7 @@ class PNNLayer(torch.nn.Module):
 
         # calculate the negative a, i.e. inv(a)
         InvX = self.inv(a)
-        # InvX[:,-1] = torch.tensor(0)
+        InvX[:,-1] = torch.tensor(0)
 
         # repeat input matrix m times to m layers, each layer is for one combination of theta
         X_repeat = a.repeat(m, 1, 1)
