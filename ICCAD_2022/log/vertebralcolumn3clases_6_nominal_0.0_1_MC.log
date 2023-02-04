@@ -1,0 +1,1810 @@
+2023-01-07 21:53:39,389 - INFO -
+gmin                0.01
+gmax                10.0
+T                   0.1
+m                   0.3
+ACT_eta1            0.134
+ACT_eta2            0.962
+ACT_eta3            0.183
+ACT_eta4            24.1
+NEG_eta1            -0.104
+NEG_eta2            0.899
+NEG_eta3            -0.056
+NEG_eta4            3.858
+hidden              [3]
+SEED                6
+DEVICE              cuda
+TIMELIMITATION      45
+PATIENCE            500
+EPOCH               10000000000
+DATASET             12
+LR                  0.1
+PROGRESSIVE         False
+LR_PATIENCE         100
+LR_DECAY            0.5
+LR_MIN              0.0001
+MODE                nominal
+M_train             1
+K_train             1
+M_test              500
+K_test              500
+t_test_max          10
+integration         MC
+VARIATION           False
+N_train             1
+e_train             0.0
+N_test              100
+e_test              0.1
+projectname         ICCAD_2022
+temppath            ./ICCAD_2022/temp/
+logfilepath         ./ICCAD_2022/log/
+recording           False
+recordpath          ./ICCAD_2022/record/
+savepath            ./ICCAD_2022/models/
+loglevel            info
+
+
+2023-01-07 21:53:39,390 - INFO -
+Training network on device: cuda.
+
+2023-01-07 21:53:39,390 - INFO -
+Training setup: vertebralcolumn3clases_6_nominal_0.0_1_MC.
+
+2023-01-07 21:53:39,390 - INFO -
+Dataset "vertebralcolumn3clases" has 6 input features and 3 classes. There are 184 training examples, 61 valid examples, and 63 test examples in the dataset.
+
+2023-01-07 21:53:39,390 - INFO -
+Topology of the network: [6, 3, 3].
+
+2023-01-07 21:53:39,946 - INFO -
+| Epoch:      0 | Train loss: 0.7019 | Valid loss: 0.8295 | Train acc: 0.2174 | Valid acc: 0.1639 | patience:   0 | Epoch time: 0.6 |
+
+2023-01-07 21:53:40,479 - INFO -
+| Epoch:      1 | Train loss: 0.7926 | Valid loss: 0.9179 | Train acc: 0.2174 | Valid acc: 0.6393 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:53:41,008 - INFO -
+| Epoch:      2 | Train loss: 0.9678 | Valid loss: 0.9181 | Train acc: 0.5489 | Valid acc: 0.5246 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:53:41,541 - INFO -
+| Epoch:      3 | Train loss: 0.9798 | Valid loss: 0.8018 | Train acc: 0.4783 | Valid acc: 0.5246 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:42,071 - INFO -
+| Epoch:      4 | Train loss: 0.8697 | Valid loss: 0.6764 | Train acc: 0.4783 | Valid acc: 0.5410 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:42,603 - INFO -
+| Epoch:      5 | Train loss: 0.7280 | Valid loss: 0.6758 | Train acc: 0.4946 | Valid acc: 0.5902 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:43,132 - INFO -
+| Epoch:      6 | Train loss: 0.6985 | Valid loss: 0.7981 | Train acc: 0.5163 | Valid acc: 0.2459 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:53:43,662 - INFO -
+| Epoch:      7 | Train loss: 0.7880 | Valid loss: 0.7496 | Train acc: 0.2554 | Valid acc: 0.4590 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:53:44,192 - INFO -
+| Epoch:      8 | Train loss: 0.7406 | Valid loss: 0.6379 | Train acc: 0.5761 | Valid acc: 0.6393 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:44,726 - INFO -
+| Epoch:      9 | Train loss: 0.6456 | Valid loss: 0.5469 | Train acc: 0.5815 | Valid acc: 0.6885 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:45,256 - INFO -
+| Epoch:     10 | Train loss: 0.5626 | Valid loss: 0.5154 | Train acc: 0.5815 | Valid acc: 0.6885 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:45,789 - INFO -
+| Epoch:     11 | Train loss: 0.5425 | Valid loss: 0.5028 | Train acc: 0.5924 | Valid acc: 0.6885 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:46,318 - INFO -
+| Epoch:     12 | Train loss: 0.5203 | Valid loss: 0.5245 | Train acc: 0.6196 | Valid acc: 0.6230 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:53:46,848 - INFO -
+| Epoch:     13 | Train loss: 0.5095 | Valid loss: 0.5444 | Train acc: 0.6522 | Valid acc: 0.6393 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:53:47,377 - INFO -
+| Epoch:     14 | Train loss: 0.5146 | Valid loss: 0.5146 | Train acc: 0.6522 | Valid acc: 0.6557 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:53:47,907 - INFO -
+| Epoch:     15 | Train loss: 0.4958 | Valid loss: 0.5053 | Train acc: 0.6522 | Valid acc: 0.7049 | patience:   4 | Epoch time: 0.5 |
+
+2023-01-07 21:53:48,435 - INFO -
+| Epoch:     16 | Train loss: 0.4981 | Valid loss: 0.5112 | Train acc: 0.6359 | Valid acc: 0.7049 | patience:   5 | Epoch time: 0.5 |
+
+2023-01-07 21:53:48,966 - INFO -
+| Epoch:     17 | Train loss: 0.4973 | Valid loss: 0.5180 | Train acc: 0.6250 | Valid acc: 0.6066 | patience:   6 | Epoch time: 0.5 |
+
+2023-01-07 21:53:49,494 - INFO -
+| Epoch:     18 | Train loss: 0.4918 | Valid loss: 0.5240 | Train acc: 0.6141 | Valid acc: 0.5902 | patience:   7 | Epoch time: 0.5 |
+
+2023-01-07 21:53:50,024 - INFO -
+| Epoch:     19 | Train loss: 0.4891 | Valid loss: 0.5224 | Train acc: 0.6033 | Valid acc: 0.6557 | patience:   8 | Epoch time: 0.5 |
+
+2023-01-07 21:53:50,552 - INFO -
+| Epoch:     20 | Train loss: 0.4945 | Valid loss: 0.5158 | Train acc: 0.6467 | Valid acc: 0.7049 | patience:   9 | Epoch time: 0.5 |
+
+2023-01-07 21:53:51,082 - INFO -
+| Epoch:     21 | Train loss: 0.4927 | Valid loss: 0.5065 | Train acc: 0.6630 | Valid acc: 0.7377 | patience:  10 | Epoch time: 0.5 |
+
+2023-01-07 21:53:51,610 - INFO -
+| Epoch:     22 | Train loss: 0.4862 | Valid loss: 0.5066 | Train acc: 0.6685 | Valid acc: 0.6066 | patience:  11 | Epoch time: 0.5 |
+
+2023-01-07 21:53:52,139 - INFO -
+| Epoch:     23 | Train loss: 0.4872 | Valid loss: 0.4975 | Train acc: 0.6413 | Valid acc: 0.6230 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:52,669 - INFO -
+| Epoch:     24 | Train loss: 0.4810 | Valid loss: 0.4920 | Train acc: 0.6630 | Valid acc: 0.7541 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:53,202 - INFO -
+| Epoch:     25 | Train loss: 0.4739 | Valid loss: 0.4892 | Train acc: 0.6957 | Valid acc: 0.7049 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:53,732 - INFO -
+| Epoch:     26 | Train loss: 0.4742 | Valid loss: 0.4788 | Train acc: 0.6739 | Valid acc: 0.7049 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:54,262 - INFO -
+| Epoch:     27 | Train loss: 0.4625 | Valid loss: 0.4623 | Train acc: 0.7174 | Valid acc: 0.7213 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:54,792 - INFO -
+| Epoch:     28 | Train loss: 0.4516 | Valid loss: 0.4480 | Train acc: 0.7011 | Valid acc: 0.7213 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:55,321 - INFO -
+| Epoch:     29 | Train loss: 0.4472 | Valid loss: 0.4792 | Train acc: 0.6793 | Valid acc: 0.6885 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:53:55,852 - INFO -
+| Epoch:     30 | Train loss: 0.4653 | Valid loss: 0.4356 | Train acc: 0.7065 | Valid acc: 0.7377 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:56,383 - INFO -
+| Epoch:     31 | Train loss: 0.4346 | Valid loss: 0.4330 | Train acc: 0.7446 | Valid acc: 0.7213 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:56,913 - INFO -
+| Epoch:     32 | Train loss: 0.4519 | Valid loss: 0.4129 | Train acc: 0.6793 | Valid acc: 0.7541 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:57,440 - INFO -
+| Epoch:     33 | Train loss: 0.4240 | Valid loss: 0.4538 | Train acc: 0.7065 | Valid acc: 0.7049 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:53:57,968 - INFO -
+| Epoch:     34 | Train loss: 0.4405 | Valid loss: 0.4168 | Train acc: 0.7663 | Valid acc: 0.7705 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:53:58,498 - INFO -
+| Epoch:     35 | Train loss: 0.4105 | Valid loss: 0.3988 | Train acc: 0.7663 | Valid acc: 0.7377 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:59,028 - INFO -
+| Epoch:     36 | Train loss: 0.4252 | Valid loss: 0.3874 | Train acc: 0.6848 | Valid acc: 0.7705 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:53:59,558 - INFO -
+| Epoch:     37 | Train loss: 0.4182 | Valid loss: 0.3828 | Train acc: 0.6902 | Valid acc: 0.7705 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:00,086 - INFO -
+| Epoch:     38 | Train loss: 0.3927 | Valid loss: 0.3928 | Train acc: 0.7663 | Valid acc: 0.7377 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:00,616 - INFO -
+| Epoch:     39 | Train loss: 0.4043 | Valid loss: 0.3533 | Train acc: 0.7717 | Valid acc: 0.7705 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:01,147 - INFO -
+| Epoch:     40 | Train loss: 0.3899 | Valid loss: 0.3489 | Train acc: 0.7337 | Valid acc: 0.7869 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:01,675 - INFO -
+| Epoch:     41 | Train loss: 0.3902 | Valid loss: 0.3709 | Train acc: 0.7228 | Valid acc: 0.7541 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:02,204 - INFO -
+| Epoch:     42 | Train loss: 0.3856 | Valid loss: 0.3583 | Train acc: 0.7717 | Valid acc: 0.8033 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:02,733 - INFO -
+| Epoch:     43 | Train loss: 0.3683 | Valid loss: 0.3543 | Train acc: 0.7826 | Valid acc: 0.7869 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:54:03,263 - INFO -
+| Epoch:     44 | Train loss: 0.3951 | Valid loss: 0.3396 | Train acc: 0.7174 | Valid acc: 0.7869 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:03,791 - INFO -
+| Epoch:     45 | Train loss: 0.3576 | Valid loss: 0.3643 | Train acc: 0.7772 | Valid acc: 0.7869 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:04,321 - INFO -
+| Epoch:     46 | Train loss: 0.3703 | Valid loss: 0.3307 | Train acc: 0.8098 | Valid acc: 0.8033 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:04,849 - INFO -
+| Epoch:     47 | Train loss: 0.3596 | Valid loss: 0.3309 | Train acc: 0.7717 | Valid acc: 0.8033 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:05,377 - INFO -
+| Epoch:     48 | Train loss: 0.3545 | Valid loss: 0.3609 | Train acc: 0.7772 | Valid acc: 0.7869 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:05,907 - INFO -
+| Epoch:     49 | Train loss: 0.3601 | Valid loss: 0.3279 | Train acc: 0.8207 | Valid acc: 0.8033 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:06,436 - INFO -
+| Epoch:     50 | Train loss: 0.3445 | Valid loss: 0.3134 | Train acc: 0.7772 | Valid acc: 0.8197 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:06,965 - INFO -
+| Epoch:     51 | Train loss: 0.3454 | Valid loss: 0.3266 | Train acc: 0.7826 | Valid acc: 0.8361 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:07,493 - INFO -
+| Epoch:     52 | Train loss: 0.3377 | Valid loss: 0.3135 | Train acc: 0.8098 | Valid acc: 0.8033 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:08,023 - INFO -
+| Epoch:     53 | Train loss: 0.3309 | Valid loss: 0.2870 | Train acc: 0.8043 | Valid acc: 0.8197 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:08,551 - INFO -
+| Epoch:     54 | Train loss: 0.3303 | Valid loss: 0.2976 | Train acc: 0.7989 | Valid acc: 0.8197 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:09,079 - INFO -
+| Epoch:     55 | Train loss: 0.3223 | Valid loss: 0.3004 | Train acc: 0.7935 | Valid acc: 0.8361 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:09,610 - INFO -
+| Epoch:     56 | Train loss: 0.3206 | Valid loss: 0.2777 | Train acc: 0.7935 | Valid acc: 0.8361 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:10,137 - INFO -
+| Epoch:     57 | Train loss: 0.3162 | Valid loss: 0.2796 | Train acc: 0.7880 | Valid acc: 0.8361 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:10,665 - INFO -
+| Epoch:     58 | Train loss: 0.3161 | Valid loss: 0.2838 | Train acc: 0.7880 | Valid acc: 0.8361 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:11,194 - INFO -
+| Epoch:     59 | Train loss: 0.3260 | Valid loss: 0.3637 | Train acc: 0.7826 | Valid acc: 0.7541 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:54:11,723 - INFO -
+| Epoch:     60 | Train loss: 0.3655 | Valid loss: 0.2749 | Train acc: 0.7663 | Valid acc: 0.8525 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:12,251 - INFO -
+| Epoch:     61 | Train loss: 0.3361 | Valid loss: 0.2792 | Train acc: 0.8152 | Valid acc: 0.8361 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:12,779 - INFO -
+| Epoch:     62 | Train loss: 0.3100 | Valid loss: 0.3463 | Train acc: 0.7989 | Valid acc: 0.7869 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:13,308 - INFO -
+| Epoch:     63 | Train loss: 0.3404 | Valid loss: 0.2767 | Train acc: 0.8315 | Valid acc: 0.8689 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:54:13,836 - INFO -
+| Epoch:     64 | Train loss: 0.3224 | Valid loss: 0.2752 | Train acc: 0.7826 | Valid acc: 0.8197 | patience:   4 | Epoch time: 0.5 |
+
+2023-01-07 21:54:14,364 - INFO -
+| Epoch:     65 | Train loss: 0.3016 | Valid loss: 0.3282 | Train acc: 0.7989 | Valid acc: 0.7869 | patience:   5 | Epoch time: 0.5 |
+
+2023-01-07 21:54:14,893 - INFO -
+| Epoch:     66 | Train loss: 0.3250 | Valid loss: 0.2746 | Train acc: 0.8261 | Valid acc: 0.8197 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:15,422 - INFO -
+| Epoch:     67 | Train loss: 0.3065 | Valid loss: 0.2871 | Train acc: 0.7880 | Valid acc: 0.8525 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:15,951 - INFO -
+| Epoch:     68 | Train loss: 0.3151 | Valid loss: 0.3287 | Train acc: 0.7880 | Valid acc: 0.8197 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:16,480 - INFO -
+| Epoch:     69 | Train loss: 0.3118 | Valid loss: 0.3122 | Train acc: 0.8370 | Valid acc: 0.8361 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:54:17,010 - INFO -
+| Epoch:     70 | Train loss: 0.3061 | Valid loss: 0.2691 | Train acc: 0.8261 | Valid acc: 0.8197 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:17,538 - INFO -
+| Epoch:     71 | Train loss: 0.3107 | Valid loss: 0.2722 | Train acc: 0.8043 | Valid acc: 0.8197 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:18,066 - INFO -
+| Epoch:     72 | Train loss: 0.2987 | Valid loss: 0.3145 | Train acc: 0.7989 | Valid acc: 0.8361 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:18,595 - INFO -
+| Epoch:     73 | Train loss: 0.2976 | Valid loss: 0.3187 | Train acc: 0.8424 | Valid acc: 0.8197 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:54:19,123 - INFO -
+| Epoch:     74 | Train loss: 0.2969 | Valid loss: 0.2782 | Train acc: 0.8424 | Valid acc: 0.8197 | patience:   4 | Epoch time: 0.5 |
+
+2023-01-07 21:54:19,653 - INFO -
+| Epoch:     75 | Train loss: 0.2929 | Valid loss: 0.2702 | Train acc: 0.8098 | Valid acc: 0.8197 | patience:   5 | Epoch time: 0.5 |
+
+2023-01-07 21:54:20,181 - INFO -
+| Epoch:     76 | Train loss: 0.2896 | Valid loss: 0.2997 | Train acc: 0.8043 | Valid acc: 0.8361 | patience:   6 | Epoch time: 0.5 |
+
+2023-01-07 21:54:20,711 - INFO -
+| Epoch:     77 | Train loss: 0.2942 | Valid loss: 0.2811 | Train acc: 0.8315 | Valid acc: 0.8525 | patience:   7 | Epoch time: 0.5 |
+
+2023-01-07 21:54:21,240 - INFO -
+| Epoch:     78 | Train loss: 0.2837 | Valid loss: 0.2858 | Train acc: 0.8261 | Valid acc: 0.8525 | patience:   8 | Epoch time: 0.5 |
+
+2023-01-07 21:54:21,768 - INFO -
+| Epoch:     79 | Train loss: 0.2841 | Valid loss: 0.2968 | Train acc: 0.8261 | Valid acc: 0.8361 | patience:   9 | Epoch time: 0.5 |
+
+2023-01-07 21:54:22,301 - INFO -
+| Epoch:     80 | Train loss: 0.2798 | Valid loss: 0.2687 | Train acc: 0.8424 | Valid acc: 0.8197 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:22,832 - INFO -
+| Epoch:     81 | Train loss: 0.2742 | Valid loss: 0.2579 | Train acc: 0.8152 | Valid acc: 0.8197 | patience:   0 | Epoch time: 0.5 |
+
+2023-01-07 21:54:23,360 - INFO -
+| Epoch:     82 | Train loss: 0.2815 | Valid loss: 0.3083 | Train acc: 0.8098 | Valid acc: 0.8197 | patience:   1 | Epoch time: 0.5 |
+
+2023-01-07 21:54:23,888 - INFO -
+| Epoch:     83 | Train loss: 0.2843 | Valid loss: 0.2926 | Train acc: 0.8261 | Valid acc: 0.8361 | patience:   2 | Epoch time: 0.5 |
+
+2023-01-07 21:54:24,416 - INFO -
+| Epoch:     84 | Train loss: 0.2748 | Valid loss: 0.2609 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:   3 | Epoch time: 0.5 |
+
+2023-01-07 21:54:24,944 - INFO -
+| Epoch:     85 | Train loss: 0.2718 | Valid loss: 0.2959 | Train acc: 0.8315 | Valid acc: 0.8197 | patience:   4 | Epoch time: 0.5 |
+
+2023-01-07 21:54:25,473 - INFO -
+| Epoch:     86 | Train loss: 0.2779 | Valid loss: 0.2594 | Train acc: 0.8261 | Valid acc: 0.8525 | patience:   5 | Epoch time: 0.5 |
+
+2023-01-07 21:54:26,002 - INFO -
+| Epoch:     87 | Train loss: 0.2681 | Valid loss: 0.2929 | Train acc: 0.8261 | Valid acc: 0.8361 | patience:   6 | Epoch time: 0.5 |
+
+2023-01-07 21:54:26,530 - INFO -
+| Epoch:     88 | Train loss: 0.2602 | Valid loss: 0.3005 | Train acc: 0.8641 | Valid acc: 0.8033 | patience:   7 | Epoch time: 0.5 |
+
+2023-01-07 21:54:27,059 - INFO -
+| Epoch:     89 | Train loss: 0.2595 | Valid loss: 0.2698 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:   8 | Epoch time: 0.5 |
+
+2023-01-07 21:54:27,587 - INFO -
+| Epoch:     90 | Train loss: 0.2596 | Valid loss: 0.2991 | Train acc: 0.8098 | Valid acc: 0.8197 | patience:   9 | Epoch time: 0.5 |
+
+2023-01-07 21:54:28,116 - INFO -
+| Epoch:     91 | Train loss: 0.2561 | Valid loss: 0.2868 | Train acc: 0.8424 | Valid acc: 0.8033 | patience:  10 | Epoch time: 0.5 |
+
+2023-01-07 21:54:28,644 - INFO -
+| Epoch:     92 | Train loss: 0.2486 | Valid loss: 0.2763 | Train acc: 0.8478 | Valid acc: 0.8197 | patience:  11 | Epoch time: 0.5 |
+
+2023-01-07 21:54:29,172 - INFO -
+| Epoch:     93 | Train loss: 0.2504 | Valid loss: 0.3020 | Train acc: 0.8370 | Valid acc: 0.7869 | patience:  12 | Epoch time: 0.5 |
+
+2023-01-07 21:54:29,701 - INFO -
+| Epoch:     94 | Train loss: 0.2471 | Valid loss: 0.2807 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  13 | Epoch time: 0.5 |
+
+2023-01-07 21:54:30,229 - INFO -
+| Epoch:     95 | Train loss: 0.2424 | Valid loss: 0.2788 | Train acc: 0.8478 | Valid acc: 0.8197 | patience:  14 | Epoch time: 0.5 |
+
+2023-01-07 21:54:30,758 - INFO -
+| Epoch:     96 | Train loss: 0.2446 | Valid loss: 0.3092 | Train acc: 0.8315 | Valid acc: 0.7869 | patience:  15 | Epoch time: 0.5 |
+
+2023-01-07 21:54:31,286 - INFO -
+| Epoch:     97 | Train loss: 0.2451 | Valid loss: 0.2896 | Train acc: 0.8696 | Valid acc: 0.8197 | patience:  16 | Epoch time: 0.5 |
+
+2023-01-07 21:54:31,815 - INFO -
+| Epoch:     98 | Train loss: 0.2407 | Valid loss: 0.2885 | Train acc: 0.8424 | Valid acc: 0.8197 | patience:  17 | Epoch time: 0.5 |
+
+2023-01-07 21:54:32,343 - INFO -
+| Epoch:     99 | Train loss: 0.2391 | Valid loss: 0.3086 | Train acc: 0.8424 | Valid acc: 0.8033 | patience:  18 | Epoch time: 0.5 |
+
+2023-01-07 21:54:32,871 - INFO -
+| Epoch:    100 | Train loss: 0.2433 | Valid loss: 0.2817 | Train acc: 0.8424 | Valid acc: 0.8361 | patience:  19 | Epoch time: 0.5 |
+
+2023-01-07 21:54:33,400 - INFO -
+| Epoch:    101 | Train loss: 0.2383 | Valid loss: 0.2879 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:  20 | Epoch time: 0.5 |
+
+2023-01-07 21:54:33,928 - INFO -
+| Epoch:    102 | Train loss: 0.2376 | Valid loss: 0.3212 | Train acc: 0.8641 | Valid acc: 0.7705 | patience:  21 | Epoch time: 0.5 |
+
+2023-01-07 21:54:34,456 - INFO -
+| Epoch:    103 | Train loss: 0.2440 | Valid loss: 0.2983 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  22 | Epoch time: 0.5 |
+
+2023-01-07 21:54:34,984 - INFO -
+| Epoch:    104 | Train loss: 0.2347 | Valid loss: 0.2870 | Train acc: 0.8478 | Valid acc: 0.8361 | patience:  23 | Epoch time: 0.5 |
+
+2023-01-07 21:54:35,512 - INFO -
+| Epoch:    105 | Train loss: 0.2395 | Valid loss: 0.3067 | Train acc: 0.8478 | Valid acc: 0.8197 | patience:  24 | Epoch time: 0.5 |
+
+2023-01-07 21:54:36,041 - INFO -
+| Epoch:    106 | Train loss: 0.2401 | Valid loss: 0.2948 | Train acc: 0.8424 | Valid acc: 0.8197 | patience:  25 | Epoch time: 0.5 |
+
+2023-01-07 21:54:36,569 - INFO -
+| Epoch:    107 | Train loss: 0.2324 | Valid loss: 0.2909 | Train acc: 0.8370 | Valid acc: 0.8361 | patience:  26 | Epoch time: 0.5 |
+
+2023-01-07 21:54:37,097 - INFO -
+| Epoch:    108 | Train loss: 0.2429 | Valid loss: 0.3127 | Train acc: 0.8424 | Valid acc: 0.7869 | patience:  27 | Epoch time: 0.5 |
+
+2023-01-07 21:54:37,625 - INFO -
+| Epoch:    109 | Train loss: 0.2370 | Valid loss: 0.3080 | Train acc: 0.8533 | Valid acc: 0.8033 | patience:  28 | Epoch time: 0.5 |
+
+2023-01-07 21:54:38,154 - INFO -
+| Epoch:    110 | Train loss: 0.2359 | Valid loss: 0.2876 | Train acc: 0.8478 | Valid acc: 0.8361 | patience:  29 | Epoch time: 0.5 |
+
+2023-01-07 21:54:38,682 - INFO -
+| Epoch:    111 | Train loss: 0.2410 | Valid loss: 0.2991 | Train acc: 0.8533 | Valid acc: 0.8197 | patience:  30 | Epoch time: 0.5 |
+
+2023-01-07 21:54:39,210 - INFO -
+| Epoch:    112 | Train loss: 0.2312 | Valid loss: 0.3111 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  31 | Epoch time: 0.5 |
+
+2023-01-07 21:54:39,738 - INFO -
+| Epoch:    113 | Train loss: 0.2352 | Valid loss: 0.2877 | Train acc: 0.8533 | Valid acc: 0.8361 | patience:  32 | Epoch time: 0.5 |
+
+2023-01-07 21:54:40,266 - INFO -
+| Epoch:    114 | Train loss: 0.2311 | Valid loss: 0.2913 | Train acc: 0.8533 | Valid acc: 0.8361 | patience:  33 | Epoch time: 0.5 |
+
+2023-01-07 21:54:40,795 - INFO -
+| Epoch:    115 | Train loss: 0.2288 | Valid loss: 0.3035 | Train acc: 0.8533 | Valid acc: 0.8361 | patience:  34 | Epoch time: 0.5 |
+
+2023-01-07 21:54:41,324 - INFO -
+| Epoch:    116 | Train loss: 0.2301 | Valid loss: 0.3045 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:  35 | Epoch time: 0.5 |
+
+2023-01-07 21:54:41,852 - INFO -
+| Epoch:    117 | Train loss: 0.2299 | Valid loss: 0.2891 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:  36 | Epoch time: 0.5 |
+
+2023-01-07 21:54:42,380 - INFO -
+| Epoch:    118 | Train loss: 0.2284 | Valid loss: 0.2919 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  37 | Epoch time: 0.5 |
+
+2023-01-07 21:54:42,908 - INFO -
+| Epoch:    119 | Train loss: 0.2265 | Valid loss: 0.2925 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  38 | Epoch time: 0.5 |
+
+2023-01-07 21:54:43,437 - INFO -
+| Epoch:    120 | Train loss: 0.2266 | Valid loss: 0.2857 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:  39 | Epoch time: 0.5 |
+
+2023-01-07 21:54:43,965 - INFO -
+| Epoch:    121 | Train loss: 0.2263 | Valid loss: 0.2933 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  40 | Epoch time: 0.5 |
+
+2023-01-07 21:54:44,494 - INFO -
+| Epoch:    122 | Train loss: 0.2255 | Valid loss: 0.2995 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  41 | Epoch time: 0.5 |
+
+2023-01-07 21:54:45,023 - INFO -
+| Epoch:    123 | Train loss: 0.2269 | Valid loss: 0.2913 | Train acc: 0.8478 | Valid acc: 0.8033 | patience:  42 | Epoch time: 0.5 |
+
+2023-01-07 21:54:45,553 - INFO -
+| Epoch:    124 | Train loss: 0.2262 | Valid loss: 0.2902 | Train acc: 0.8533 | Valid acc: 0.8197 | patience:  43 | Epoch time: 0.5 |
+
+2023-01-07 21:54:46,082 - INFO -
+| Epoch:    125 | Train loss: 0.2282 | Valid loss: 0.2972 | Train acc: 0.8587 | Valid acc: 0.7869 | patience:  44 | Epoch time: 0.5 |
+
+2023-01-07 21:54:46,610 - INFO -
+| Epoch:    126 | Train loss: 0.2271 | Valid loss: 0.2929 | Train acc: 0.8533 | Valid acc: 0.8033 | patience:  45 | Epoch time: 0.5 |
+
+2023-01-07 21:54:47,138 - INFO -
+| Epoch:    127 | Train loss: 0.2255 | Valid loss: 0.2942 | Train acc: 0.8533 | Valid acc: 0.8361 | patience:  46 | Epoch time: 0.5 |
+
+2023-01-07 21:54:47,665 - INFO -
+| Epoch:    128 | Train loss: 0.2297 | Valid loss: 0.2951 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  47 | Epoch time: 0.5 |
+
+2023-01-07 21:54:48,193 - INFO -
+| Epoch:    129 | Train loss: 0.2250 | Valid loss: 0.2953 | Train acc: 0.8533 | Valid acc: 0.8033 | patience:  48 | Epoch time: 0.5 |
+
+2023-01-07 21:54:48,721 - INFO -
+| Epoch:    130 | Train loss: 0.2253 | Valid loss: 0.2851 | Train acc: 0.8478 | Valid acc: 0.8361 | patience:  49 | Epoch time: 0.5 |
+
+2023-01-07 21:54:49,250 - INFO -
+| Epoch:    131 | Train loss: 0.2268 | Valid loss: 0.2938 | Train acc: 0.8533 | Valid acc: 0.8197 | patience:  50 | Epoch time: 0.5 |
+
+2023-01-07 21:54:49,778 - INFO -
+| Epoch:    132 | Train loss: 0.2244 | Valid loss: 0.2944 | Train acc: 0.8478 | Valid acc: 0.8197 | patience:  51 | Epoch time: 0.5 |
+
+2023-01-07 21:54:50,306 - INFO -
+| Epoch:    133 | Train loss: 0.2236 | Valid loss: 0.2937 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:  52 | Epoch time: 0.5 |
+
+2023-01-07 21:54:50,834 - INFO -
+| Epoch:    134 | Train loss: 0.2242 | Valid loss: 0.2943 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  53 | Epoch time: 0.5 |
+
+2023-01-07 21:54:51,363 - INFO -
+| Epoch:    135 | Train loss: 0.2230 | Valid loss: 0.2897 | Train acc: 0.8478 | Valid acc: 0.8197 | patience:  54 | Epoch time: 0.5 |
+
+2023-01-07 21:54:51,892 - INFO -
+| Epoch:    136 | Train loss: 0.2220 | Valid loss: 0.2897 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  55 | Epoch time: 0.5 |
+
+2023-01-07 21:54:52,420 - INFO -
+| Epoch:    137 | Train loss: 0.2226 | Valid loss: 0.2923 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  56 | Epoch time: 0.5 |
+
+2023-01-07 21:54:52,948 - INFO -
+| Epoch:    138 | Train loss: 0.2220 | Valid loss: 0.2883 | Train acc: 0.8478 | Valid acc: 0.8361 | patience:  57 | Epoch time: 0.5 |
+
+2023-01-07 21:54:53,476 - INFO -
+| Epoch:    139 | Train loss: 0.2208 | Valid loss: 0.2924 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:  58 | Epoch time: 0.5 |
+
+2023-01-07 21:54:54,004 - INFO -
+| Epoch:    140 | Train loss: 0.2210 | Valid loss: 0.2937 | Train acc: 0.8641 | Valid acc: 0.8033 | patience:  59 | Epoch time: 0.5 |
+
+2023-01-07 21:54:54,533 - INFO -
+| Epoch:    141 | Train loss: 0.2205 | Valid loss: 0.2831 | Train acc: 0.8478 | Valid acc: 0.8361 | patience:  60 | Epoch time: 0.5 |
+
+2023-01-07 21:54:55,062 - INFO -
+| Epoch:    142 | Train loss: 0.2222 | Valid loss: 0.3145 | Train acc: 0.8641 | Valid acc: 0.8033 | patience:  61 | Epoch time: 0.5 |
+
+2023-01-07 21:54:55,591 - INFO -
+| Epoch:    143 | Train loss: 0.2319 | Valid loss: 0.2829 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  62 | Epoch time: 0.5 |
+
+2023-01-07 21:54:56,119 - INFO -
+| Epoch:    144 | Train loss: 0.2293 | Valid loss: 0.3043 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  63 | Epoch time: 0.5 |
+
+2023-01-07 21:54:56,647 - INFO -
+| Epoch:    145 | Train loss: 0.2221 | Valid loss: 0.3099 | Train acc: 0.8478 | Valid acc: 0.8033 | patience:  64 | Epoch time: 0.5 |
+
+2023-01-07 21:54:57,175 - INFO -
+| Epoch:    146 | Train loss: 0.2269 | Valid loss: 0.2827 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  65 | Epoch time: 0.5 |
+
+2023-01-07 21:54:57,703 - INFO -
+| Epoch:    147 | Train loss: 0.2348 | Valid loss: 0.3059 | Train acc: 0.8696 | Valid acc: 0.7869 | patience:  66 | Epoch time: 0.5 |
+
+2023-01-07 21:54:58,231 - INFO -
+| Epoch:    148 | Train loss: 0.2231 | Valid loss: 0.3068 | Train acc: 0.8587 | Valid acc: 0.7869 | patience:  67 | Epoch time: 0.5 |
+
+2023-01-07 21:54:58,760 - INFO -
+| Epoch:    149 | Train loss: 0.2219 | Valid loss: 0.2922 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  68 | Epoch time: 0.5 |
+
+2023-01-07 21:54:59,289 - INFO -
+| Epoch:    150 | Train loss: 0.2331 | Valid loss: 0.3159 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  69 | Epoch time: 0.5 |
+
+2023-01-07 21:54:59,817 - INFO -
+| Epoch:    151 | Train loss: 0.2259 | Valid loss: 0.2996 | Train acc: 0.8750 | Valid acc: 0.8197 | patience:  70 | Epoch time: 0.5 |
+
+2023-01-07 21:55:00,345 - INFO -
+| Epoch:    152 | Train loss: 0.2198 | Valid loss: 0.2924 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  71 | Epoch time: 0.5 |
+
+2023-01-07 21:55:00,874 - INFO -
+| Epoch:    153 | Train loss: 0.2248 | Valid loss: 0.3195 | Train acc: 0.8641 | Valid acc: 0.7705 | patience:  72 | Epoch time: 0.5 |
+
+2023-01-07 21:55:01,402 - INFO -
+| Epoch:    154 | Train loss: 0.2296 | Valid loss: 0.2982 | Train acc: 0.8533 | Valid acc: 0.8361 | patience:  73 | Epoch time: 0.5 |
+
+2023-01-07 21:55:01,931 - INFO -
+| Epoch:    155 | Train loss: 0.2189 | Valid loss: 0.3011 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  74 | Epoch time: 0.5 |
+
+2023-01-07 21:55:02,459 - INFO -
+| Epoch:    156 | Train loss: 0.2251 | Valid loss: 0.3150 | Train acc: 0.8533 | Valid acc: 0.8197 | patience:  75 | Epoch time: 0.5 |
+
+2023-01-07 21:55:02,987 - INFO -
+| Epoch:    157 | Train loss: 0.2258 | Valid loss: 0.2958 | Train acc: 0.8696 | Valid acc: 0.8197 | patience:  76 | Epoch time: 0.5 |
+
+2023-01-07 21:55:03,515 - INFO -
+| Epoch:    158 | Train loss: 0.2185 | Valid loss: 0.2897 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  77 | Epoch time: 0.5 |
+
+2023-01-07 21:55:04,045 - INFO -
+| Epoch:    159 | Train loss: 0.2243 | Valid loss: 0.3193 | Train acc: 0.8696 | Valid acc: 0.7869 | patience:  78 | Epoch time: 0.5 |
+
+2023-01-07 21:55:04,574 - INFO -
+| Epoch:    160 | Train loss: 0.2298 | Valid loss: 0.3028 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:  79 | Epoch time: 0.5 |
+
+2023-01-07 21:55:05,102 - INFO -
+| Epoch:    161 | Train loss: 0.2189 | Valid loss: 0.2964 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  80 | Epoch time: 0.5 |
+
+2023-01-07 21:55:05,630 - INFO -
+| Epoch:    162 | Train loss: 0.2272 | Valid loss: 0.3011 | Train acc: 0.8533 | Valid acc: 0.7869 | patience:  81 | Epoch time: 0.5 |
+
+2023-01-07 21:55:06,158 - INFO -
+| Epoch:    163 | Train loss: 0.2182 | Valid loss: 0.3001 | Train acc: 0.8641 | Valid acc: 0.7869 | patience:  82 | Epoch time: 0.5 |
+
+2023-01-07 21:55:06,686 - INFO -
+| Epoch:    164 | Train loss: 0.2184 | Valid loss: 0.2910 | Train acc: 0.8533 | Valid acc: 0.8361 | patience:  83 | Epoch time: 0.5 |
+
+2023-01-07 21:55:07,215 - INFO -
+| Epoch:    165 | Train loss: 0.2228 | Valid loss: 0.3038 | Train acc: 0.8533 | Valid acc: 0.8033 | patience:  84 | Epoch time: 0.5 |
+
+2023-01-07 21:55:07,743 - INFO -
+| Epoch:    166 | Train loss: 0.2214 | Valid loss: 0.2878 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  85 | Epoch time: 0.5 |
+
+2023-01-07 21:55:08,270 - INFO -
+| Epoch:    167 | Train loss: 0.2188 | Valid loss: 0.2943 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:  86 | Epoch time: 0.5 |
+
+2023-01-07 21:55:08,798 - INFO -
+| Epoch:    168 | Train loss: 0.2188 | Valid loss: 0.3111 | Train acc: 0.8641 | Valid acc: 0.8033 | patience:  87 | Epoch time: 0.5 |
+
+2023-01-07 21:55:09,326 - INFO -
+| Epoch:    169 | Train loss: 0.2250 | Valid loss: 0.2842 | Train acc: 0.8750 | Valid acc: 0.8361 | patience:  88 | Epoch time: 0.5 |
+
+2023-01-07 21:55:09,854 - INFO -
+| Epoch:    170 | Train loss: 0.2224 | Valid loss: 0.3084 | Train acc: 0.8696 | Valid acc: 0.8033 | patience:  89 | Epoch time: 0.5 |
+
+2023-01-07 21:55:10,382 - INFO -
+| Epoch:    171 | Train loss: 0.2216 | Valid loss: 0.2906 | Train acc: 0.8750 | Valid acc: 0.8361 | patience:  90 | Epoch time: 0.5 |
+
+2023-01-07 21:55:10,911 - INFO -
+| Epoch:    172 | Train loss: 0.2191 | Valid loss: 0.2967 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  91 | Epoch time: 0.5 |
+
+2023-01-07 21:55:11,439 - INFO -
+| Epoch:    173 | Train loss: 0.2181 | Valid loss: 0.2994 | Train acc: 0.8587 | Valid acc: 0.8033 | patience:  92 | Epoch time: 0.5 |
+
+2023-01-07 21:55:11,967 - INFO -
+| Epoch:    174 | Train loss: 0.2181 | Valid loss: 0.2904 | Train acc: 0.8587 | Valid acc: 0.8361 | patience:  93 | Epoch time: 0.5 |
+
+2023-01-07 21:55:12,495 - INFO -
+| Epoch:    175 | Train loss: 0.2172 | Valid loss: 0.2970 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:  94 | Epoch time: 0.5 |
+
+2023-01-07 21:55:13,023 - INFO -
+| Epoch:    176 | Train loss: 0.2169 | Valid loss: 0.2907 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:  95 | Epoch time: 0.5 |
+
+2023-01-07 21:55:13,551 - INFO -
+| Epoch:    177 | Train loss: 0.2164 | Valid loss: 0.2897 | Train acc: 0.8641 | Valid acc: 0.8197 | patience:  96 | Epoch time: 0.5 |
+
+2023-01-07 21:55:14,079 - INFO -
+| Epoch:    178 | Train loss: 0.2172 | Valid loss: 0.2971 | Train acc: 0.8587 | Valid acc: 0.8197 | patience:  97 | Epoch time: 0.5 |
+
+2023-01-07 21:55:14,607 - INFO -
+| Epoch:    179 | Train loss: 0.2172 | Valid loss: 0.2897 | Train acc: 0.8641 | Valid acc: 0.8361 | patience:  98 | Epoch time: 0.5 |
+
+2023-01-07 21:55:15,135 - INFO -
+| Epoch:    180 | Train loss: 0.2173 | Valid loss: 0.2993 | Train acc: 0.8587 | Valid acc: 0.7869 | patience:  99 | Epoch time: 0.5 |
+
+2023-01-07 21:55:15,664 - INFO -
+| Epoch:    181 | Train loss: 0.2173 | Valid loss: 0.2905 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 100 | Epoch time: 0.5 |
+
+2023-01-07 21:55:16,192 - INFO -
+| Epoch:    182 | Train loss: 0.2168 | Valid loss: 0.2977 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 101 | Epoch time: 0.5 |
+
+2023-01-07 21:55:16,720 - INFO -
+| Epoch:    183 | Train loss: 0.2167 | Valid loss: 0.2986 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 102 | Epoch time: 0.5 |
+
+2023-01-07 21:55:17,248 - INFO -
+| Epoch:    184 | Train loss: 0.2157 | Valid loss: 0.2965 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 103 | Epoch time: 0.5 |
+
+2023-01-07 21:55:17,776 - INFO -
+| Epoch:    185 | Train loss: 0.2154 | Valid loss: 0.2928 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 104 | Epoch time: 0.5 |
+
+2023-01-07 21:55:18,304 - INFO -
+| Epoch:    186 | Train loss: 0.2148 | Valid loss: 0.2979 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 105 | Epoch time: 0.5 |
+
+2023-01-07 21:55:18,832 - INFO -
+| Epoch:    187 | Train loss: 0.2163 | Valid loss: 0.2858 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 106 | Epoch time: 0.5 |
+
+2023-01-07 21:55:19,360 - INFO -
+| Epoch:    188 | Train loss: 0.2196 | Valid loss: 0.3228 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 107 | Epoch time: 0.5 |
+
+2023-01-07 21:55:19,889 - INFO -
+| Epoch:    189 | Train loss: 0.2286 | Valid loss: 0.2883 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 108 | Epoch time: 0.5 |
+
+2023-01-07 21:55:20,417 - INFO -
+| Epoch:    190 | Train loss: 0.2181 | Valid loss: 0.2963 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 109 | Epoch time: 0.5 |
+
+2023-01-07 21:55:20,945 - INFO -
+| Epoch:    191 | Train loss: 0.2145 | Valid loss: 0.3134 | Train acc: 0.8587 | Valid acc: 0.7869 | patience: 110 | Epoch time: 0.5 |
+
+2023-01-07 21:55:21,473 - INFO -
+| Epoch:    192 | Train loss: 0.2210 | Valid loss: 0.2895 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 111 | Epoch time: 0.5 |
+
+2023-01-07 21:55:22,001 - INFO -
+| Epoch:    193 | Train loss: 0.2224 | Valid loss: 0.3053 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 112 | Epoch time: 0.5 |
+
+2023-01-07 21:55:22,529 - INFO -
+| Epoch:    194 | Train loss: 0.2168 | Valid loss: 0.2986 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 113 | Epoch time: 0.5 |
+
+2023-01-07 21:55:23,057 - INFO -
+| Epoch:    195 | Train loss: 0.2155 | Valid loss: 0.2928 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 114 | Epoch time: 0.5 |
+
+2023-01-07 21:55:23,585 - INFO -
+| Epoch:    196 | Train loss: 0.2164 | Valid loss: 0.3072 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 115 | Epoch time: 0.5 |
+
+2023-01-07 21:55:24,113 - INFO -
+| Epoch:    197 | Train loss: 0.2186 | Valid loss: 0.2918 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 116 | Epoch time: 0.5 |
+
+2023-01-07 21:55:24,641 - INFO -
+| Epoch:    198 | Train loss: 0.2169 | Valid loss: 0.3009 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 117 | Epoch time: 0.5 |
+
+2023-01-07 21:55:25,169 - INFO -
+| Epoch:    199 | Train loss: 0.2161 | Valid loss: 0.2933 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 118 | Epoch time: 0.5 |
+
+2023-01-07 21:55:25,697 - INFO -
+| Epoch:    200 | Train loss: 0.2148 | Valid loss: 0.2977 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 119 | Epoch time: 0.5 |
+
+2023-01-07 21:55:26,226 - INFO -
+| Epoch:    201 | Train loss: 0.2148 | Valid loss: 0.2955 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 120 | Epoch time: 0.5 |
+
+2023-01-07 21:55:26,754 - INFO -
+| Epoch:    202 | Train loss: 0.2150 | Valid loss: 0.3012 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 121 | Epoch time: 0.5 |
+
+2023-01-07 21:55:27,282 - INFO -
+| Epoch:    203 | Train loss: 0.2149 | Valid loss: 0.2941 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 122 | Epoch time: 0.5 |
+
+2023-01-07 21:55:27,810 - INFO -
+| Epoch:    204 | Train loss: 0.2166 | Valid loss: 0.3020 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 123 | Epoch time: 0.5 |
+
+2023-01-07 21:55:28,338 - INFO -
+| Epoch:    205 | Train loss: 0.2150 | Valid loss: 0.3057 | Train acc: 0.8641 | Valid acc: 0.7869 | patience: 124 | Epoch time: 0.5 |
+
+2023-01-07 21:55:28,867 - INFO -
+| Epoch:    206 | Train loss: 0.2166 | Valid loss: 0.2881 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 125 | Epoch time: 0.5 |
+
+2023-01-07 21:55:29,394 - INFO -
+| Epoch:    207 | Train loss: 0.2223 | Valid loss: 0.3157 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 126 | Epoch time: 0.5 |
+
+2023-01-07 21:55:29,922 - INFO -
+| Epoch:    208 | Train loss: 0.2224 | Valid loss: 0.2963 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 127 | Epoch time: 0.5 |
+
+2023-01-07 21:55:30,450 - INFO -
+| Epoch:    209 | Train loss: 0.2135 | Valid loss: 0.2877 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 128 | Epoch time: 0.5 |
+
+2023-01-07 21:55:30,979 - INFO -
+| Epoch:    210 | Train loss: 0.2173 | Valid loss: 0.3181 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 129 | Epoch time: 0.5 |
+
+2023-01-07 21:55:31,507 - INFO -
+| Epoch:    211 | Train loss: 0.2239 | Valid loss: 0.2878 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 130 | Epoch time: 0.5 |
+
+2023-01-07 21:55:32,035 - INFO -
+| Epoch:    212 | Train loss: 0.2156 | Valid loss: 0.2939 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 131 | Epoch time: 0.5 |
+
+2023-01-07 21:55:32,563 - INFO -
+| Epoch:    213 | Train loss: 0.2131 | Valid loss: 0.3026 | Train acc: 0.8641 | Valid acc: 0.7869 | patience: 132 | Epoch time: 0.5 |
+
+2023-01-07 21:55:33,092 - INFO -
+| Epoch:    214 | Train loss: 0.2161 | Valid loss: 0.2861 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 133 | Epoch time: 0.5 |
+
+2023-01-07 21:55:33,619 - INFO -
+| Epoch:    215 | Train loss: 0.2162 | Valid loss: 0.2984 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 134 | Epoch time: 0.5 |
+
+2023-01-07 21:55:34,147 - INFO -
+| Epoch:    216 | Train loss: 0.2140 | Valid loss: 0.2901 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 135 | Epoch time: 0.5 |
+
+2023-01-07 21:55:34,676 - INFO -
+| Epoch:    217 | Train loss: 0.2124 | Valid loss: 0.2909 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 136 | Epoch time: 0.5 |
+
+2023-01-07 21:55:35,203 - INFO -
+| Epoch:    218 | Train loss: 0.2132 | Valid loss: 0.3025 | Train acc: 0.8587 | Valid acc: 0.7869 | patience: 137 | Epoch time: 0.5 |
+
+2023-01-07 21:55:35,732 - INFO -
+| Epoch:    219 | Train loss: 0.2162 | Valid loss: 0.2839 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 138 | Epoch time: 0.5 |
+
+2023-01-07 21:55:36,260 - INFO -
+| Epoch:    220 | Train loss: 0.2178 | Valid loss: 0.3017 | Train acc: 0.8587 | Valid acc: 0.7869 | patience: 139 | Epoch time: 0.5 |
+
+2023-01-07 21:55:36,789 - INFO -
+| Epoch:    221 | Train loss: 0.2152 | Valid loss: 0.2949 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 140 | Epoch time: 0.5 |
+
+2023-01-07 21:55:37,316 - INFO -
+| Epoch:    222 | Train loss: 0.2122 | Valid loss: 0.2830 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 141 | Epoch time: 0.5 |
+
+2023-01-07 21:55:37,844 - INFO -
+| Epoch:    223 | Train loss: 0.2219 | Valid loss: 0.3180 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 142 | Epoch time: 0.5 |
+
+2023-01-07 21:55:38,372 - INFO -
+| Epoch:    224 | Train loss: 0.2247 | Valid loss: 0.2864 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 143 | Epoch time: 0.5 |
+
+2023-01-07 21:55:38,900 - INFO -
+| Epoch:    225 | Train loss: 0.2143 | Valid loss: 0.2860 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 144 | Epoch time: 0.5 |
+
+2023-01-07 21:55:39,428 - INFO -
+| Epoch:    226 | Train loss: 0.2152 | Valid loss: 0.3125 | Train acc: 0.8587 | Valid acc: 0.7869 | patience: 145 | Epoch time: 0.5 |
+
+2023-01-07 21:55:39,956 - INFO -
+| Epoch:    227 | Train loss: 0.2213 | Valid loss: 0.2881 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 146 | Epoch time: 0.5 |
+
+2023-01-07 21:55:40,485 - INFO -
+| Epoch:    228 | Train loss: 0.2144 | Valid loss: 0.2935 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 147 | Epoch time: 0.5 |
+
+2023-01-07 21:55:41,013 - INFO -
+| Epoch:    229 | Train loss: 0.2123 | Valid loss: 0.3020 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 148 | Epoch time: 0.5 |
+
+2023-01-07 21:55:41,541 - INFO -
+| Epoch:    230 | Train loss: 0.2148 | Valid loss: 0.2888 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 149 | Epoch time: 0.5 |
+
+2023-01-07 21:55:42,071 - INFO -
+| Epoch:    231 | Train loss: 0.2152 | Valid loss: 0.3003 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 150 | Epoch time: 0.5 |
+
+2023-01-07 21:55:42,599 - INFO -
+| Epoch:    232 | Train loss: 0.2138 | Valid loss: 0.2960 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 151 | Epoch time: 0.5 |
+
+2023-01-07 21:55:43,127 - INFO -
+| Epoch:    233 | Train loss: 0.2129 | Valid loss: 0.2889 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 152 | Epoch time: 0.5 |
+
+2023-01-07 21:55:43,655 - INFO -
+| Epoch:    234 | Train loss: 0.2143 | Valid loss: 0.3069 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 153 | Epoch time: 0.5 |
+
+2023-01-07 21:55:44,183 - INFO -
+| Epoch:    235 | Train loss: 0.2163 | Valid loss: 0.2952 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 154 | Epoch time: 0.5 |
+
+2023-01-07 21:55:44,712 - INFO -
+| Epoch:    236 | Train loss: 0.2121 | Valid loss: 0.2888 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 155 | Epoch time: 0.5 |
+
+2023-01-07 21:55:45,241 - INFO -
+| Epoch:    237 | Train loss: 0.2127 | Valid loss: 0.3048 | Train acc: 0.8587 | Valid acc: 0.7869 | patience: 156 | Epoch time: 0.5 |
+
+2023-01-07 21:55:45,770 - INFO -
+| Epoch:    238 | Train loss: 0.2162 | Valid loss: 0.2890 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 157 | Epoch time: 0.5 |
+
+2023-01-07 21:55:46,298 - INFO -
+| Epoch:    239 | Train loss: 0.2120 | Valid loss: 0.2919 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 158 | Epoch time: 0.5 |
+
+2023-01-07 21:55:46,826 - INFO -
+| Epoch:    240 | Train loss: 0.2110 | Valid loss: 0.2915 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 159 | Epoch time: 0.5 |
+
+2023-01-07 21:55:47,355 - INFO -
+| Epoch:    241 | Train loss: 0.2114 | Valid loss: 0.2951 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 160 | Epoch time: 0.5 |
+
+2023-01-07 21:55:47,882 - INFO -
+| Epoch:    242 | Train loss: 0.2117 | Valid loss: 0.2837 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 161 | Epoch time: 0.5 |
+
+2023-01-07 21:55:48,411 - INFO -
+| Epoch:    243 | Train loss: 0.2157 | Valid loss: 0.3078 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 162 | Epoch time: 0.5 |
+
+2023-01-07 21:55:48,939 - INFO -
+| Epoch:    244 | Train loss: 0.2186 | Valid loss: 0.2870 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 163 | Epoch time: 0.5 |
+
+2023-01-07 21:55:49,467 - INFO -
+| Epoch:    245 | Train loss: 0.2120 | Valid loss: 0.2893 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 164 | Epoch time: 0.5 |
+
+2023-01-07 21:55:49,994 - INFO -
+| Epoch:    246 | Train loss: 0.2121 | Valid loss: 0.3040 | Train acc: 0.8641 | Valid acc: 0.7869 | patience: 165 | Epoch time: 0.5 |
+
+2023-01-07 21:55:50,523 - INFO -
+| Epoch:    247 | Train loss: 0.2149 | Valid loss: 0.2854 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 166 | Epoch time: 0.5 |
+
+2023-01-07 21:55:51,050 - INFO -
+| Epoch:    248 | Train loss: 0.2123 | Valid loss: 0.2945 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 167 | Epoch time: 0.5 |
+
+2023-01-07 21:55:51,578 - INFO -
+| Epoch:    249 | Train loss: 0.2115 | Valid loss: 0.2861 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 168 | Epoch time: 0.5 |
+
+2023-01-07 21:55:52,107 - INFO -
+| Epoch:    250 | Train loss: 0.2109 | Valid loss: 0.2952 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 169 | Epoch time: 0.5 |
+
+2023-01-07 21:55:52,634 - INFO -
+| Epoch:    251 | Train loss: 0.2111 | Valid loss: 0.2861 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 170 | Epoch time: 0.5 |
+
+2023-01-07 21:55:53,162 - INFO -
+| Epoch:    252 | Train loss: 0.2118 | Valid loss: 0.3124 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 171 | Epoch time: 0.5 |
+
+2023-01-07 21:55:53,690 - INFO -
+| Epoch:    253 | Train loss: 0.2185 | Valid loss: 0.2851 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 172 | Epoch time: 0.5 |
+
+2023-01-07 21:55:54,218 - INFO -
+| Epoch:    254 | Train loss: 0.2199 | Valid loss: 0.3015 | Train acc: 0.8641 | Valid acc: 0.7869 | patience: 173 | Epoch time: 0.5 |
+
+2023-01-07 21:55:54,746 - INFO -
+| Epoch:    255 | Train loss: 0.2128 | Valid loss: 0.2966 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 174 | Epoch time: 0.5 |
+
+2023-01-07 21:55:55,274 - INFO -
+| Epoch:    256 | Train loss: 0.2121 | Valid loss: 0.2868 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 175 | Epoch time: 0.5 |
+
+2023-01-07 21:55:55,801 - INFO -
+| Epoch:    257 | Train loss: 0.2126 | Valid loss: 0.3090 | Train acc: 0.8587 | Valid acc: 0.7869 | patience: 176 | Epoch time: 0.5 |
+
+2023-01-07 21:55:56,329 - INFO -
+| Epoch:    258 | Train loss: 0.2181 | Valid loss: 0.2849 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 177 | Epoch time: 0.5 |
+
+2023-01-07 21:55:56,856 - INFO -
+| Epoch:    259 | Train loss: 0.2175 | Valid loss: 0.3037 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 178 | Epoch time: 0.5 |
+
+2023-01-07 21:55:57,384 - INFO -
+| Epoch:    260 | Train loss: 0.2137 | Valid loss: 0.2937 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 179 | Epoch time: 0.5 |
+
+2023-01-07 21:55:57,912 - INFO -
+| Epoch:    261 | Train loss: 0.2129 | Valid loss: 0.2932 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 180 | Epoch time: 0.5 |
+
+2023-01-07 21:55:58,439 - INFO -
+| Epoch:    262 | Train loss: 0.2110 | Valid loss: 0.3031 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 181 | Epoch time: 0.5 |
+
+2023-01-07 21:55:58,966 - INFO -
+| Epoch:    263 | Train loss: 0.2138 | Valid loss: 0.2911 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 182 | Epoch time: 0.5 |
+
+2023-01-07 21:55:59,494 - INFO -
+| Epoch:    264 | Train loss: 0.2130 | Valid loss: 0.3017 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 183 | Epoch time: 0.5 |
+
+2023-01-07 21:56:00,021 - INFO -
+| Epoch:    265 | Train loss: 0.2133 | Valid loss: 0.2878 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 184 | Epoch time: 0.5 |
+
+2023-01-07 21:56:00,548 - INFO -
+| Epoch:    266 | Train loss: 0.2133 | Valid loss: 0.3046 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 185 | Epoch time: 0.5 |
+
+2023-01-07 21:56:01,075 - INFO -
+| Epoch:    267 | Train loss: 0.2135 | Valid loss: 0.2890 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 186 | Epoch time: 0.5 |
+
+2023-01-07 21:56:01,603 - INFO -
+| Epoch:    268 | Train loss: 0.2137 | Valid loss: 0.2989 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 187 | Epoch time: 0.5 |
+
+2023-01-07 21:56:02,130 - INFO -
+| Epoch:    269 | Train loss: 0.2110 | Valid loss: 0.2984 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 188 | Epoch time: 0.5 |
+
+2023-01-07 21:56:02,658 - INFO -
+| Epoch:    270 | Train loss: 0.2111 | Valid loss: 0.2843 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 189 | Epoch time: 0.5 |
+
+2023-01-07 21:56:03,185 - INFO -
+| Epoch:    271 | Train loss: 0.2178 | Valid loss: 0.3194 | Train acc: 0.8641 | Valid acc: 0.7869 | patience: 190 | Epoch time: 0.5 |
+
+2023-01-07 21:56:03,713 - INFO -
+| Epoch:    272 | Train loss: 0.2239 | Valid loss: 0.2810 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 191 | Epoch time: 0.5 |
+
+2023-01-07 21:56:04,241 - INFO -
+| Epoch:    273 | Train loss: 0.2169 | Valid loss: 0.2880 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 192 | Epoch time: 0.5 |
+
+2023-01-07 21:56:04,769 - INFO -
+| Epoch:    274 | Train loss: 0.2097 | Valid loss: 0.3101 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 193 | Epoch time: 0.5 |
+
+2023-01-07 21:56:05,295 - INFO -
+| Epoch:    275 | Train loss: 0.2180 | Valid loss: 0.2779 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 194 | Epoch time: 0.5 |
+
+2023-01-07 21:56:05,823 - INFO -
+| Epoch:    276 | Train loss: 0.2271 | Valid loss: 0.3028 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 195 | Epoch time: 0.5 |
+
+2023-01-07 21:56:06,350 - INFO -
+| Epoch:    277 | Train loss: 0.2142 | Valid loss: 0.2951 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 196 | Epoch time: 0.5 |
+
+2023-01-07 21:56:06,877 - INFO -
+| Epoch:    278 | Train loss: 0.2103 | Valid loss: 0.2767 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 197 | Epoch time: 0.5 |
+
+2023-01-07 21:56:07,404 - INFO -
+| Epoch:    279 | Train loss: 0.2223 | Valid loss: 0.3072 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 198 | Epoch time: 0.5 |
+
+2023-01-07 21:56:07,931 - INFO -
+| Epoch:    280 | Train loss: 0.2177 | Valid loss: 0.2801 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 199 | Epoch time: 0.5 |
+
+2023-01-07 21:56:08,458 - INFO -
+| Epoch:    281 | Train loss: 0.2131 | Valid loss: 0.2911 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 200 | Epoch time: 0.5 |
+
+2023-01-07 21:56:08,985 - INFO -
+| Epoch:    282 | Train loss: 0.2108 | Valid loss: 0.2837 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 201 | Epoch time: 0.5 |
+
+2023-01-07 21:56:09,512 - INFO -
+| Epoch:    283 | Train loss: 0.2099 | Valid loss: 0.2793 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 202 | Epoch time: 0.5 |
+
+2023-01-07 21:56:10,040 - INFO -
+| Epoch:    284 | Train loss: 0.2112 | Valid loss: 0.2981 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 203 | Epoch time: 0.5 |
+
+2023-01-07 21:56:10,567 - INFO -
+| Epoch:    285 | Train loss: 0.2137 | Valid loss: 0.2796 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 204 | Epoch time: 0.5 |
+
+2023-01-07 21:56:11,095 - INFO -
+| Epoch:    286 | Train loss: 0.2154 | Valid loss: 0.2910 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 205 | Epoch time: 0.5 |
+
+2023-01-07 21:56:11,622 - INFO -
+| Epoch:    287 | Train loss: 0.2107 | Valid loss: 0.2878 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 206 | Epoch time: 0.5 |
+
+2023-01-07 21:56:12,149 - INFO -
+| Epoch:    288 | Train loss: 0.2101 | Valid loss: 0.2821 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 207 | Epoch time: 0.5 |
+
+2023-01-07 21:56:12,676 - INFO -
+| Epoch:    289 | Train loss: 0.2105 | Valid loss: 0.2866 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 208 | Epoch time: 0.5 |
+
+2023-01-07 21:56:13,203 - INFO -
+| Epoch:    290 | Train loss: 0.2098 | Valid loss: 0.2851 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 209 | Epoch time: 0.5 |
+
+2023-01-07 21:56:13,730 - INFO -
+| Epoch:    291 | Train loss: 0.2093 | Valid loss: 0.2791 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 210 | Epoch time: 0.5 |
+
+2023-01-07 21:56:14,257 - INFO -
+| Epoch:    292 | Train loss: 0.2109 | Valid loss: 0.2962 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 211 | Epoch time: 0.5 |
+
+2023-01-07 21:56:14,785 - INFO -
+| Epoch:    293 | Train loss: 0.2141 | Valid loss: 0.2746 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 212 | Epoch time: 0.5 |
+
+2023-01-07 21:56:15,313 - INFO -
+| Epoch:    294 | Train loss: 0.2134 | Valid loss: 0.2998 | Train acc: 0.8641 | Valid acc: 0.8525 | patience: 213 | Epoch time: 0.5 |
+
+2023-01-07 21:56:15,840 - INFO -
+| Epoch:    295 | Train loss: 0.2157 | Valid loss: 0.2733 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 214 | Epoch time: 0.5 |
+
+2023-01-07 21:56:16,368 - INFO -
+| Epoch:    296 | Train loss: 0.2160 | Valid loss: 0.3043 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 215 | Epoch time: 0.5 |
+
+2023-01-07 21:56:16,895 - INFO -
+| Epoch:    297 | Train loss: 0.2173 | Valid loss: 0.2786 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 216 | Epoch time: 0.5 |
+
+2023-01-07 21:56:17,423 - INFO -
+| Epoch:    298 | Train loss: 0.2155 | Valid loss: 0.2914 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 217 | Epoch time: 0.5 |
+
+2023-01-07 21:56:17,950 - INFO -
+| Epoch:    299 | Train loss: 0.2095 | Valid loss: 0.2985 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 218 | Epoch time: 0.5 |
+
+2023-01-07 21:56:18,477 - INFO -
+| Epoch:    300 | Train loss: 0.2133 | Valid loss: 0.2726 | Train acc: 0.8859 | Valid acc: 0.8197 | patience: 219 | Epoch time: 0.5 |
+
+2023-01-07 21:56:19,004 - INFO -
+| Epoch:    301 | Train loss: 0.2326 | Valid loss: 0.3249 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 220 | Epoch time: 0.5 |
+
+2023-01-07 21:56:19,532 - INFO -
+| Epoch:    302 | Train loss: 0.2302 | Valid loss: 0.2841 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 221 | Epoch time: 0.5 |
+
+2023-01-07 21:56:20,059 - INFO -
+| Epoch:    303 | Train loss: 0.2108 | Valid loss: 0.2812 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 222 | Epoch time: 0.5 |
+
+2023-01-07 21:56:20,587 - INFO -
+| Epoch:    304 | Train loss: 0.2122 | Valid loss: 0.3158 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 223 | Epoch time: 0.5 |
+
+2023-01-07 21:56:21,114 - INFO -
+| Epoch:    305 | Train loss: 0.2228 | Valid loss: 0.2751 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 224 | Epoch time: 0.5 |
+
+2023-01-07 21:56:21,642 - INFO -
+| Epoch:    306 | Train loss: 0.2197 | Valid loss: 0.2971 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 225 | Epoch time: 0.5 |
+
+2023-01-07 21:56:22,170 - INFO -
+| Epoch:    307 | Train loss: 0.2113 | Valid loss: 0.2942 | Train acc: 0.8804 | Valid acc: 0.8033 | patience: 226 | Epoch time: 0.5 |
+
+2023-01-07 21:56:22,698 - INFO -
+| Epoch:    308 | Train loss: 0.2099 | Valid loss: 0.2763 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 227 | Epoch time: 0.5 |
+
+2023-01-07 21:56:23,225 - INFO -
+| Epoch:    309 | Train loss: 0.2233 | Valid loss: 0.3137 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 228 | Epoch time: 0.5 |
+
+2023-01-07 21:56:23,753 - INFO -
+| Epoch:    310 | Train loss: 0.2231 | Valid loss: 0.2834 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 229 | Epoch time: 0.5 |
+
+2023-01-07 21:56:24,280 - INFO -
+| Epoch:    311 | Train loss: 0.2118 | Valid loss: 0.2896 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 230 | Epoch time: 0.5 |
+
+2023-01-07 21:56:24,808 - INFO -
+| Epoch:    312 | Train loss: 0.2102 | Valid loss: 0.3062 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 231 | Epoch time: 0.5 |
+
+2023-01-07 21:56:25,335 - INFO -
+| Epoch:    313 | Train loss: 0.2174 | Valid loss: 0.2808 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 232 | Epoch time: 0.5 |
+
+2023-01-07 21:56:25,863 - INFO -
+| Epoch:    314 | Train loss: 0.2118 | Valid loss: 0.2873 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 233 | Epoch time: 0.5 |
+
+2023-01-07 21:56:26,390 - INFO -
+| Epoch:    315 | Train loss: 0.2093 | Valid loss: 0.3011 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 234 | Epoch time: 0.5 |
+
+2023-01-07 21:56:26,919 - INFO -
+| Epoch:    316 | Train loss: 0.2131 | Valid loss: 0.2836 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 235 | Epoch time: 0.5 |
+
+2023-01-07 21:56:27,447 - INFO -
+| Epoch:    317 | Train loss: 0.2131 | Valid loss: 0.2927 | Train acc: 0.8587 | Valid acc: 0.8197 | patience: 236 | Epoch time: 0.5 |
+
+2023-01-07 21:56:27,974 - INFO -
+| Epoch:    318 | Train loss: 0.2088 | Valid loss: 0.2941 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 237 | Epoch time: 0.5 |
+
+2023-01-07 21:56:28,502 - INFO -
+| Epoch:    319 | Train loss: 0.2095 | Valid loss: 0.2796 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 238 | Epoch time: 0.5 |
+
+2023-01-07 21:56:29,029 - INFO -
+| Epoch:    320 | Train loss: 0.2113 | Valid loss: 0.2905 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 239 | Epoch time: 0.5 |
+
+2023-01-07 21:56:29,556 - INFO -
+| Epoch:    321 | Train loss: 0.2090 | Valid loss: 0.2949 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 240 | Epoch time: 0.5 |
+
+2023-01-07 21:56:30,085 - INFO -
+| Epoch:    322 | Train loss: 0.2103 | Valid loss: 0.2745 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 241 | Epoch time: 0.5 |
+
+2023-01-07 21:56:30,612 - INFO -
+| Epoch:    323 | Train loss: 0.2144 | Valid loss: 0.2943 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 242 | Epoch time: 0.5 |
+
+2023-01-07 21:56:31,140 - INFO -
+| Epoch:    324 | Train loss: 0.2100 | Valid loss: 0.2898 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 243 | Epoch time: 0.5 |
+
+2023-01-07 21:56:31,667 - INFO -
+| Epoch:    325 | Train loss: 0.2082 | Valid loss: 0.2734 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 244 | Epoch time: 0.5 |
+
+2023-01-07 21:56:32,195 - INFO -
+| Epoch:    326 | Train loss: 0.2152 | Valid loss: 0.3017 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 245 | Epoch time: 0.5 |
+
+2023-01-07 21:56:32,722 - INFO -
+| Epoch:    327 | Train loss: 0.2158 | Valid loss: 0.2804 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 246 | Epoch time: 0.5 |
+
+2023-01-07 21:56:33,250 - INFO -
+| Epoch:    328 | Train loss: 0.2077 | Valid loss: 0.2777 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 247 | Epoch time: 0.5 |
+
+2023-01-07 21:56:33,777 - INFO -
+| Epoch:    329 | Train loss: 0.2091 | Valid loss: 0.2962 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 248 | Epoch time: 0.5 |
+
+2023-01-07 21:56:34,305 - INFO -
+| Epoch:    330 | Train loss: 0.2120 | Valid loss: 0.2796 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 249 | Epoch time: 0.5 |
+
+2023-01-07 21:56:34,832 - INFO -
+| Epoch:    331 | Train loss: 0.2081 | Valid loss: 0.2766 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 250 | Epoch time: 0.5 |
+
+2023-01-07 21:56:35,359 - INFO -
+| Epoch:    332 | Train loss: 0.2099 | Valid loss: 0.3013 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 251 | Epoch time: 0.5 |
+
+2023-01-07 21:56:35,887 - INFO -
+| Epoch:    333 | Train loss: 0.2151 | Valid loss: 0.2777 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 252 | Epoch time: 0.5 |
+
+2023-01-07 21:56:36,415 - INFO -
+| Epoch:    334 | Train loss: 0.2100 | Valid loss: 0.2847 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 253 | Epoch time: 0.5 |
+
+2023-01-07 21:56:36,943 - INFO -
+| Epoch:    335 | Train loss: 0.2068 | Valid loss: 0.2917 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 254 | Epoch time: 0.5 |
+
+2023-01-07 21:56:37,470 - INFO -
+| Epoch:    336 | Train loss: 0.2088 | Valid loss: 0.2740 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 255 | Epoch time: 0.5 |
+
+2023-01-07 21:56:37,997 - INFO -
+| Epoch:    337 | Train loss: 0.2131 | Valid loss: 0.2881 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 256 | Epoch time: 0.5 |
+
+2023-01-07 21:56:38,524 - INFO -
+| Epoch:    338 | Train loss: 0.2071 | Valid loss: 0.2865 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 257 | Epoch time: 0.5 |
+
+2023-01-07 21:56:39,051 - INFO -
+| Epoch:    339 | Train loss: 0.2065 | Valid loss: 0.2767 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 258 | Epoch time: 0.5 |
+
+2023-01-07 21:56:39,579 - INFO -
+| Epoch:    340 | Train loss: 0.2092 | Valid loss: 0.2964 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 259 | Epoch time: 0.5 |
+
+2023-01-07 21:56:40,106 - INFO -
+| Epoch:    341 | Train loss: 0.2106 | Valid loss: 0.2806 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 260 | Epoch time: 0.5 |
+
+2023-01-07 21:56:40,633 - INFO -
+| Epoch:    342 | Train loss: 0.2075 | Valid loss: 0.2809 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 261 | Epoch time: 0.5 |
+
+2023-01-07 21:56:41,161 - INFO -
+| Epoch:    343 | Train loss: 0.2070 | Valid loss: 0.2925 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 262 | Epoch time: 0.5 |
+
+2023-01-07 21:56:41,688 - INFO -
+| Epoch:    344 | Train loss: 0.2098 | Valid loss: 0.2758 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 263 | Epoch time: 0.5 |
+
+2023-01-07 21:56:42,215 - INFO -
+| Epoch:    345 | Train loss: 0.2102 | Valid loss: 0.2860 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 264 | Epoch time: 0.5 |
+
+2023-01-07 21:56:42,742 - INFO -
+| Epoch:    346 | Train loss: 0.2064 | Valid loss: 0.3037 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 265 | Epoch time: 0.5 |
+
+2023-01-07 21:56:43,269 - INFO -
+| Epoch:    347 | Train loss: 0.2145 | Valid loss: 0.2729 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 266 | Epoch time: 0.5 |
+
+2023-01-07 21:56:43,797 - INFO -
+| Epoch:    348 | Train loss: 0.2173 | Valid loss: 0.2876 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 267 | Epoch time: 0.5 |
+
+2023-01-07 21:56:44,324 - INFO -
+| Epoch:    349 | Train loss: 0.2058 | Valid loss: 0.3045 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 268 | Epoch time: 0.5 |
+
+2023-01-07 21:56:44,851 - INFO -
+| Epoch:    350 | Train loss: 0.2150 | Valid loss: 0.2738 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 269 | Epoch time: 0.5 |
+
+2023-01-07 21:56:45,378 - INFO -
+| Epoch:    351 | Train loss: 0.2184 | Valid loss: 0.2896 | Train acc: 0.8750 | Valid acc: 0.8033 | patience: 270 | Epoch time: 0.5 |
+
+2023-01-07 21:56:45,906 - INFO -
+| Epoch:    352 | Train loss: 0.2064 | Valid loss: 0.2992 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 271 | Epoch time: 0.5 |
+
+2023-01-07 21:56:46,435 - INFO -
+| Epoch:    353 | Train loss: 0.2105 | Valid loss: 0.2742 | Train acc: 0.8913 | Valid acc: 0.8197 | patience: 272 | Epoch time: 0.5 |
+
+2023-01-07 21:56:46,962 - INFO -
+| Epoch:    354 | Train loss: 0.2140 | Valid loss: 0.2897 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 273 | Epoch time: 0.5 |
+
+2023-01-07 21:56:47,490 - INFO -
+| Epoch:    355 | Train loss: 0.2061 | Valid loss: 0.2930 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 274 | Epoch time: 0.5 |
+
+2023-01-07 21:56:48,016 - INFO -
+| Epoch:    356 | Train loss: 0.2070 | Valid loss: 0.2734 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 275 | Epoch time: 0.5 |
+
+2023-01-07 21:56:48,544 - INFO -
+| Epoch:    357 | Train loss: 0.2146 | Valid loss: 0.2946 | Train acc: 0.8750 | Valid acc: 0.7869 | patience: 276 | Epoch time: 0.5 |
+
+2023-01-07 21:56:49,071 - INFO -
+| Epoch:    358 | Train loss: 0.2087 | Valid loss: 0.2936 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 277 | Epoch time: 0.5 |
+
+2023-01-07 21:56:49,598 - INFO -
+| Epoch:    359 | Train loss: 0.2081 | Valid loss: 0.2794 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 278 | Epoch time: 0.5 |
+
+2023-01-07 21:56:50,125 - INFO -
+| Epoch:    360 | Train loss: 0.2104 | Valid loss: 0.2853 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 279 | Epoch time: 0.5 |
+
+2023-01-07 21:56:50,652 - INFO -
+| Epoch:    361 | Train loss: 0.2062 | Valid loss: 0.2999 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 280 | Epoch time: 0.5 |
+
+2023-01-07 21:56:51,180 - INFO -
+| Epoch:    362 | Train loss: 0.2124 | Valid loss: 0.2725 | Train acc: 0.8859 | Valid acc: 0.8197 | patience: 281 | Epoch time: 0.5 |
+
+2023-01-07 21:56:51,707 - INFO -
+| Epoch:    363 | Train loss: 0.2220 | Valid loss: 0.2998 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 282 | Epoch time: 0.5 |
+
+2023-01-07 21:56:52,234 - INFO -
+| Epoch:    364 | Train loss: 0.2110 | Valid loss: 0.2979 | Train acc: 0.8913 | Valid acc: 0.8033 | patience: 283 | Epoch time: 0.5 |
+
+2023-01-07 21:56:52,761 - INFO -
+| Epoch:    365 | Train loss: 0.2104 | Valid loss: 0.2768 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 284 | Epoch time: 0.5 |
+
+2023-01-07 21:56:53,288 - INFO -
+| Epoch:    366 | Train loss: 0.2226 | Valid loss: 0.2899 | Train acc: 0.8750 | Valid acc: 0.8033 | patience: 285 | Epoch time: 0.5 |
+
+2023-01-07 21:56:53,815 - INFO -
+| Epoch:    367 | Train loss: 0.2064 | Valid loss: 0.3041 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 286 | Epoch time: 0.5 |
+
+2023-01-07 21:56:54,343 - INFO -
+| Epoch:    368 | Train loss: 0.2157 | Valid loss: 0.2717 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 287 | Epoch time: 0.5 |
+
+2023-01-07 21:56:54,870 - INFO -
+| Epoch:    369 | Train loss: 0.2276 | Valid loss: 0.2878 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 288 | Epoch time: 0.5 |
+
+2023-01-07 21:56:55,398 - INFO -
+| Epoch:    370 | Train loss: 0.2059 | Valid loss: 0.3101 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 289 | Epoch time: 0.5 |
+
+2023-01-07 21:56:55,925 - INFO -
+| Epoch:    371 | Train loss: 0.2201 | Valid loss: 0.2734 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 290 | Epoch time: 0.5 |
+
+2023-01-07 21:56:56,452 - INFO -
+| Epoch:    372 | Train loss: 0.2164 | Valid loss: 0.2756 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 291 | Epoch time: 0.5 |
+
+2023-01-07 21:56:56,980 - INFO -
+| Epoch:    373 | Train loss: 0.2083 | Valid loss: 0.3278 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 292 | Epoch time: 0.5 |
+
+2023-01-07 21:56:57,507 - INFO -
+| Epoch:    374 | Train loss: 0.2377 | Valid loss: 0.2739 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 293 | Epoch time: 0.5 |
+
+2023-01-07 21:56:58,034 - INFO -
+| Epoch:    375 | Train loss: 0.2147 | Valid loss: 0.2806 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 294 | Epoch time: 0.5 |
+
+2023-01-07 21:56:58,562 - INFO -
+| Epoch:    376 | Train loss: 0.2149 | Valid loss: 0.3161 | Train acc: 0.8804 | Valid acc: 0.8033 | patience: 295 | Epoch time: 0.5 |
+
+2023-01-07 21:56:59,089 - INFO -
+| Epoch:    377 | Train loss: 0.2254 | Valid loss: 0.2769 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 296 | Epoch time: 0.5 |
+
+2023-01-07 21:56:59,617 - INFO -
+| Epoch:    378 | Train loss: 0.2063 | Valid loss: 0.2706 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 297 | Epoch time: 0.5 |
+
+2023-01-07 21:57:00,144 - INFO -
+| Epoch:    379 | Train loss: 0.2166 | Valid loss: 0.3072 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 298 | Epoch time: 0.5 |
+
+2023-01-07 21:57:00,671 - INFO -
+| Epoch:    380 | Train loss: 0.2185 | Valid loss: 0.2852 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 299 | Epoch time: 0.5 |
+
+2023-01-07 21:57:01,199 - INFO -
+| Epoch:    381 | Train loss: 0.2062 | Valid loss: 0.2825 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 300 | Epoch time: 0.5 |
+
+2023-01-07 21:57:01,727 - INFO -
+| Epoch:    382 | Train loss: 0.2120 | Valid loss: 0.2941 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 301 | Epoch time: 0.5 |
+
+2023-01-07 21:57:02,254 - INFO -
+| Epoch:    383 | Train loss: 0.2081 | Valid loss: 0.2872 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 302 | Epoch time: 0.5 |
+
+2023-01-07 21:57:02,781 - INFO -
+| Epoch:    384 | Train loss: 0.2060 | Valid loss: 0.2804 | Train acc: 0.8641 | Valid acc: 0.8525 | patience: 303 | Epoch time: 0.5 |
+
+2023-01-07 21:57:03,309 - INFO -
+| Epoch:    385 | Train loss: 0.2080 | Valid loss: 0.2905 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 304 | Epoch time: 0.5 |
+
+2023-01-07 21:57:03,836 - INFO -
+| Epoch:    386 | Train loss: 0.2075 | Valid loss: 0.2827 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 305 | Epoch time: 0.5 |
+
+2023-01-07 21:57:04,363 - INFO -
+| Epoch:    387 | Train loss: 0.2069 | Valid loss: 0.2848 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 306 | Epoch time: 0.5 |
+
+2023-01-07 21:57:04,892 - INFO -
+| Epoch:    388 | Train loss: 0.2071 | Valid loss: 0.2957 | Train acc: 0.8641 | Valid acc: 0.8033 | patience: 307 | Epoch time: 0.5 |
+
+2023-01-07 21:57:05,419 - INFO -
+| Epoch:    389 | Train loss: 0.2092 | Valid loss: 0.2826 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 308 | Epoch time: 0.5 |
+
+2023-01-07 21:57:05,947 - INFO -
+| Epoch:    390 | Train loss: 0.2058 | Valid loss: 0.2794 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 309 | Epoch time: 0.5 |
+
+2023-01-07 21:57:06,475 - INFO -
+| Epoch:    391 | Train loss: 0.2062 | Valid loss: 0.2874 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 310 | Epoch time: 0.5 |
+
+2023-01-07 21:57:07,002 - INFO -
+| Epoch:    392 | Train loss: 0.2078 | Valid loss: 0.2838 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 311 | Epoch time: 0.5 |
+
+2023-01-07 21:57:07,529 - INFO -
+| Epoch:    393 | Train loss: 0.2066 | Valid loss: 0.2899 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 312 | Epoch time: 0.5 |
+
+2023-01-07 21:57:08,058 - INFO -
+| Epoch:    394 | Train loss: 0.2077 | Valid loss: 0.2930 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 313 | Epoch time: 0.5 |
+
+2023-01-07 21:57:08,586 - INFO -
+| Epoch:    395 | Train loss: 0.2071 | Valid loss: 0.2820 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 314 | Epoch time: 0.5 |
+
+2023-01-07 21:57:09,113 - INFO -
+| Epoch:    396 | Train loss: 0.2064 | Valid loss: 0.2821 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 315 | Epoch time: 0.5 |
+
+2023-01-07 21:57:09,640 - INFO -
+| Epoch:    397 | Train loss: 0.2067 | Valid loss: 0.2917 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 316 | Epoch time: 0.5 |
+
+2023-01-07 21:57:10,167 - INFO -
+| Epoch:    398 | Train loss: 0.2081 | Valid loss: 0.2800 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 317 | Epoch time: 0.5 |
+
+2023-01-07 21:57:10,694 - INFO -
+| Epoch:    399 | Train loss: 0.2078 | Valid loss: 0.2911 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 318 | Epoch time: 0.5 |
+
+2023-01-07 21:57:11,223 - INFO -
+| Epoch:    400 | Train loss: 0.2071 | Valid loss: 0.3027 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 319 | Epoch time: 0.5 |
+
+2023-01-07 21:57:11,751 - INFO -
+| Epoch:    401 | Train loss: 0.2125 | Valid loss: 0.2792 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 320 | Epoch time: 0.5 |
+
+2023-01-07 21:57:12,278 - INFO -
+| Epoch:    402 | Train loss: 0.2070 | Valid loss: 0.2812 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 321 | Epoch time: 0.5 |
+
+2023-01-07 21:57:12,805 - INFO -
+| Epoch:    403 | Train loss: 0.2072 | Valid loss: 0.2998 | Train acc: 0.8696 | Valid acc: 0.8689 | patience: 322 | Epoch time: 0.5 |
+
+2023-01-07 21:57:13,332 - INFO -
+| Epoch:    404 | Train loss: 0.2148 | Valid loss: 0.2736 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 323 | Epoch time: 0.5 |
+
+2023-01-07 21:57:13,860 - INFO -
+| Epoch:    405 | Train loss: 0.2130 | Valid loss: 0.2896 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 324 | Epoch time: 0.5 |
+
+2023-01-07 21:57:14,388 - INFO -
+| Epoch:    406 | Train loss: 0.2062 | Valid loss: 0.3026 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 325 | Epoch time: 0.5 |
+
+2023-01-07 21:57:14,915 - INFO -
+| Epoch:    407 | Train loss: 0.2131 | Valid loss: 0.2804 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 326 | Epoch time: 0.5 |
+
+2023-01-07 21:57:15,442 - INFO -
+| Epoch:    408 | Train loss: 0.2056 | Valid loss: 0.2782 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 327 | Epoch time: 0.5 |
+
+2023-01-07 21:57:15,970 - INFO -
+| Epoch:    409 | Train loss: 0.2064 | Valid loss: 0.3019 | Train acc: 0.8696 | Valid acc: 0.8689 | patience: 328 | Epoch time: 0.5 |
+
+2023-01-07 21:57:16,498 - INFO -
+| Epoch:    410 | Train loss: 0.2148 | Valid loss: 0.2738 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 329 | Epoch time: 0.5 |
+
+2023-01-07 21:57:17,025 - INFO -
+| Epoch:    411 | Train loss: 0.2181 | Valid loss: 0.2934 | Train acc: 0.8804 | Valid acc: 0.8033 | patience: 330 | Epoch time: 0.5 |
+
+2023-01-07 21:57:17,553 - INFO -
+| Epoch:    412 | Train loss: 0.2069 | Valid loss: 0.3031 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 331 | Epoch time: 0.5 |
+
+2023-01-07 21:57:18,081 - INFO -
+| Epoch:    413 | Train loss: 0.2132 | Valid loss: 0.2701 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 332 | Epoch time: 0.5 |
+
+2023-01-07 21:57:18,608 - INFO -
+| Epoch:    414 | Train loss: 0.2177 | Valid loss: 0.2809 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 333 | Epoch time: 0.5 |
+
+2023-01-07 21:57:19,136 - INFO -
+| Epoch:    415 | Train loss: 0.2055 | Valid loss: 0.3141 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 334 | Epoch time: 0.5 |
+
+2023-01-07 21:57:19,664 - INFO -
+| Epoch:    416 | Train loss: 0.2243 | Valid loss: 0.2750 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 335 | Epoch time: 0.5 |
+
+2023-01-07 21:57:20,191 - INFO -
+| Epoch:    417 | Train loss: 0.2265 | Valid loss: 0.2888 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 336 | Epoch time: 0.5 |
+
+2023-01-07 21:57:20,720 - INFO -
+| Epoch:    418 | Train loss: 0.2133 | Valid loss: 0.3465 | Train acc: 0.8641 | Valid acc: 0.7869 | patience: 337 | Epoch time: 0.5 |
+
+2023-01-07 21:57:21,248 - INFO -
+| Epoch:    419 | Train loss: 0.2521 | Valid loss: 0.2736 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 338 | Epoch time: 0.5 |
+
+2023-01-07 21:57:21,775 - INFO -
+| Epoch:    420 | Train loss: 0.2099 | Valid loss: 0.2759 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 339 | Epoch time: 0.5 |
+
+2023-01-07 21:57:22,303 - INFO -
+| Epoch:    421 | Train loss: 0.2285 | Valid loss: 0.3173 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 340 | Epoch time: 0.5 |
+
+2023-01-07 21:57:22,831 - INFO -
+| Epoch:    422 | Train loss: 0.2297 | Valid loss: 0.2863 | Train acc: 0.8750 | Valid acc: 0.8033 | patience: 341 | Epoch time: 0.5 |
+
+2023-01-07 21:57:23,359 - INFO -
+| Epoch:    423 | Train loss: 0.2055 | Valid loss: 0.2845 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 342 | Epoch time: 0.5 |
+
+2023-01-07 21:57:23,887 - INFO -
+| Epoch:    424 | Train loss: 0.2205 | Valid loss: 0.2962 | Train acc: 0.8750 | Valid acc: 0.8033 | patience: 343 | Epoch time: 0.5 |
+
+2023-01-07 21:57:24,414 - INFO -
+| Epoch:    425 | Train loss: 0.2095 | Valid loss: 0.3016 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 344 | Epoch time: 0.5 |
+
+2023-01-07 21:57:24,941 - INFO -
+| Epoch:    426 | Train loss: 0.2135 | Valid loss: 0.2783 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 345 | Epoch time: 0.5 |
+
+2023-01-07 21:57:25,468 - INFO -
+| Epoch:    427 | Train loss: 0.2096 | Valid loss: 0.2800 | Train acc: 0.8533 | Valid acc: 0.8525 | patience: 346 | Epoch time: 0.5 |
+
+2023-01-07 21:57:25,996 - INFO -
+| Epoch:    428 | Train loss: 0.2080 | Valid loss: 0.3005 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 347 | Epoch time: 0.5 |
+
+2023-01-07 21:57:26,524 - INFO -
+| Epoch:    429 | Train loss: 0.2130 | Valid loss: 0.2831 | Train acc: 0.8804 | Valid acc: 0.8033 | patience: 348 | Epoch time: 0.5 |
+
+2023-01-07 21:57:27,051 - INFO -
+| Epoch:    430 | Train loss: 0.2094 | Valid loss: 0.2851 | Train acc: 0.8587 | Valid acc: 0.8033 | patience: 349 | Epoch time: 0.5 |
+
+2023-01-07 21:57:27,578 - INFO -
+| Epoch:    431 | Train loss: 0.2087 | Valid loss: 0.2979 | Train acc: 0.8587 | Valid acc: 0.8361 | patience: 350 | Epoch time: 0.5 |
+
+2023-01-07 21:57:28,106 - INFO -
+| Epoch:    432 | Train loss: 0.2102 | Valid loss: 0.2784 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 351 | Epoch time: 0.5 |
+
+2023-01-07 21:57:28,634 - INFO -
+| Epoch:    433 | Train loss: 0.2055 | Valid loss: 0.2741 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 352 | Epoch time: 0.5 |
+
+2023-01-07 21:57:29,160 - INFO -
+| Epoch:    434 | Train loss: 0.2069 | Valid loss: 0.2857 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 353 | Epoch time: 0.5 |
+
+2023-01-07 21:57:29,688 - INFO -
+| Epoch:    435 | Train loss: 0.2085 | Valid loss: 0.2882 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 354 | Epoch time: 0.5 |
+
+2023-01-07 21:57:30,216 - INFO -
+| Epoch:    436 | Train loss: 0.2052 | Valid loss: 0.2873 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 355 | Epoch time: 0.5 |
+
+2023-01-07 21:57:30,744 - INFO -
+| Epoch:    437 | Train loss: 0.2074 | Valid loss: 0.2907 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 356 | Epoch time: 0.5 |
+
+2023-01-07 21:57:31,272 - INFO -
+| Epoch:    438 | Train loss: 0.2062 | Valid loss: 0.2928 | Train acc: 0.8696 | Valid acc: 0.7869 | patience: 357 | Epoch time: 0.5 |
+
+2023-01-07 21:57:31,799 - INFO -
+| Epoch:    439 | Train loss: 0.2065 | Valid loss: 0.2809 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 358 | Epoch time: 0.5 |
+
+2023-01-07 21:57:32,327 - INFO -
+| Epoch:    440 | Train loss: 0.2063 | Valid loss: 0.2877 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 359 | Epoch time: 0.5 |
+
+2023-01-07 21:57:32,854 - INFO -
+| Epoch:    441 | Train loss: 0.2070 | Valid loss: 0.2913 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 360 | Epoch time: 0.5 |
+
+2023-01-07 21:57:33,382 - INFO -
+| Epoch:    442 | Train loss: 0.2065 | Valid loss: 0.2812 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 361 | Epoch time: 0.5 |
+
+2023-01-07 21:57:33,910 - INFO -
+| Epoch:    443 | Train loss: 0.2058 | Valid loss: 0.2819 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 362 | Epoch time: 0.5 |
+
+2023-01-07 21:57:34,437 - INFO -
+| Epoch:    444 | Train loss: 0.2061 | Valid loss: 0.2878 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 363 | Epoch time: 0.5 |
+
+2023-01-07 21:57:34,965 - INFO -
+| Epoch:    445 | Train loss: 0.2052 | Valid loss: 0.2899 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 364 | Epoch time: 0.5 |
+
+2023-01-07 21:57:35,492 - INFO -
+| Epoch:    446 | Train loss: 0.2057 | Valid loss: 0.2728 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 365 | Epoch time: 0.5 |
+
+2023-01-07 21:57:36,020 - INFO -
+| Epoch:    447 | Train loss: 0.2075 | Valid loss: 0.2878 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 366 | Epoch time: 0.5 |
+
+2023-01-07 21:57:36,548 - INFO -
+| Epoch:    448 | Train loss: 0.2051 | Valid loss: 0.2791 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 367 | Epoch time: 0.5 |
+
+2023-01-07 21:57:37,075 - INFO -
+| Epoch:    449 | Train loss: 0.2034 | Valid loss: 0.2822 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 368 | Epoch time: 0.5 |
+
+2023-01-07 21:57:37,603 - INFO -
+| Epoch:    450 | Train loss: 0.2032 | Valid loss: 0.2914 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 369 | Epoch time: 0.5 |
+
+2023-01-07 21:57:38,130 - INFO -
+| Epoch:    451 | Train loss: 0.2064 | Valid loss: 0.2696 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 370 | Epoch time: 0.5 |
+
+2023-01-07 21:57:38,659 - INFO -
+| Epoch:    452 | Train loss: 0.2102 | Valid loss: 0.2840 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 371 | Epoch time: 0.5 |
+
+2023-01-07 21:57:39,186 - INFO -
+| Epoch:    453 | Train loss: 0.2034 | Valid loss: 0.2943 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 372 | Epoch time: 0.5 |
+
+2023-01-07 21:57:39,715 - INFO -
+| Epoch:    454 | Train loss: 0.2076 | Valid loss: 0.2713 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 373 | Epoch time: 0.5 |
+
+2023-01-07 21:57:40,243 - INFO -
+| Epoch:    455 | Train loss: 0.2149 | Valid loss: 0.2788 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 374 | Epoch time: 0.5 |
+
+2023-01-07 21:57:40,770 - INFO -
+| Epoch:    456 | Train loss: 0.2034 | Valid loss: 0.3171 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 375 | Epoch time: 0.5 |
+
+2023-01-07 21:57:41,299 - INFO -
+| Epoch:    457 | Train loss: 0.2256 | Valid loss: 0.2685 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 376 | Epoch time: 0.5 |
+
+2023-01-07 21:57:41,826 - INFO -
+| Epoch:    458 | Train loss: 0.2226 | Valid loss: 0.2740 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 377 | Epoch time: 0.5 |
+
+2023-01-07 21:57:42,353 - INFO -
+| Epoch:    459 | Train loss: 0.2089 | Valid loss: 0.3282 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 378 | Epoch time: 0.5 |
+
+2023-01-07 21:57:42,880 - INFO -
+| Epoch:    460 | Train loss: 0.2347 | Valid loss: 0.2770 | Train acc: 0.8533 | Valid acc: 0.8361 | patience: 379 | Epoch time: 0.5 |
+
+2023-01-07 21:57:43,407 - INFO -
+| Epoch:    461 | Train loss: 0.2045 | Valid loss: 0.2725 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 380 | Epoch time: 0.5 |
+
+2023-01-07 21:57:43,935 - INFO -
+| Epoch:    462 | Train loss: 0.2184 | Valid loss: 0.2918 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 381 | Epoch time: 0.5 |
+
+2023-01-07 21:57:44,462 - INFO -
+| Epoch:    463 | Train loss: 0.2063 | Valid loss: 0.2842 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 382 | Epoch time: 0.5 |
+
+2023-01-07 21:57:44,990 - INFO -
+| Epoch:    464 | Train loss: 0.2036 | Valid loss: 0.2745 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 383 | Epoch time: 0.5 |
+
+2023-01-07 21:57:45,517 - INFO -
+| Epoch:    465 | Train loss: 0.2051 | Valid loss: 0.2778 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 384 | Epoch time: 0.5 |
+
+2023-01-07 21:57:46,044 - INFO -
+| Epoch:    466 | Train loss: 0.2037 | Valid loss: 0.2890 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 385 | Epoch time: 0.5 |
+
+2023-01-07 21:57:46,572 - INFO -
+| Epoch:    467 | Train loss: 0.2065 | Valid loss: 0.2729 | Train acc: 0.8859 | Valid acc: 0.8525 | patience: 386 | Epoch time: 0.5 |
+
+2023-01-07 21:57:47,100 - INFO -
+| Epoch:    468 | Train loss: 0.2056 | Valid loss: 0.2756 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 387 | Epoch time: 0.5 |
+
+2023-01-07 21:57:47,626 - INFO -
+| Epoch:    469 | Train loss: 0.2040 | Valid loss: 0.2940 | Train acc: 0.8641 | Valid acc: 0.8525 | patience: 388 | Epoch time: 0.5 |
+
+2023-01-07 21:57:48,153 - INFO -
+| Epoch:    470 | Train loss: 0.2094 | Valid loss: 0.2679 | Train acc: 0.8804 | Valid acc: 0.8689 | patience: 389 | Epoch time: 0.5 |
+
+2023-01-07 21:57:48,680 - INFO -
+| Epoch:    471 | Train loss: 0.2071 | Valid loss: 0.2728 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 390 | Epoch time: 0.5 |
+
+2023-01-07 21:57:49,208 - INFO -
+| Epoch:    472 | Train loss: 0.2034 | Valid loss: 0.2984 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 391 | Epoch time: 0.5 |
+
+2023-01-07 21:57:49,737 - INFO -
+| Epoch:    473 | Train loss: 0.2121 | Valid loss: 0.2681 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 392 | Epoch time: 0.5 |
+
+2023-01-07 21:57:50,265 - INFO -
+| Epoch:    474 | Train loss: 0.2110 | Valid loss: 0.2741 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 393 | Epoch time: 0.5 |
+
+2023-01-07 21:57:50,794 - INFO -
+| Epoch:    475 | Train loss: 0.2040 | Valid loss: 0.3079 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 394 | Epoch time: 0.5 |
+
+2023-01-07 21:57:51,323 - INFO -
+| Epoch:    476 | Train loss: 0.2171 | Valid loss: 0.2675 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 395 | Epoch time: 0.5 |
+
+2023-01-07 21:57:51,850 - INFO -
+| Epoch:    477 | Train loss: 0.2115 | Valid loss: 0.2737 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 396 | Epoch time: 0.5 |
+
+2023-01-07 21:57:52,378 - INFO -
+| Epoch:    478 | Train loss: 0.2034 | Valid loss: 0.3056 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 397 | Epoch time: 0.5 |
+
+2023-01-07 21:57:52,906 - INFO -
+| Epoch:    479 | Train loss: 0.2139 | Valid loss: 0.2753 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 398 | Epoch time: 0.5 |
+
+2023-01-07 21:57:53,434 - INFO -
+| Epoch:    480 | Train loss: 0.2079 | Valid loss: 0.2791 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 399 | Epoch time: 0.5 |
+
+2023-01-07 21:57:53,961 - INFO -
+| Epoch:    481 | Train loss: 0.2037 | Valid loss: 0.3012 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 400 | Epoch time: 0.5 |
+
+2023-01-07 21:57:54,488 - INFO -
+| Epoch:    482 | Train loss: 0.2099 | Valid loss: 0.2753 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 401 | Epoch time: 0.5 |
+
+2023-01-07 21:57:55,015 - INFO -
+| Epoch:    483 | Train loss: 0.2065 | Valid loss: 0.2800 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 402 | Epoch time: 0.5 |
+
+2023-01-07 21:57:55,543 - INFO -
+| Epoch:    484 | Train loss: 0.2027 | Valid loss: 0.2928 | Train acc: 0.8641 | Valid acc: 0.8525 | patience: 403 | Epoch time: 0.5 |
+
+2023-01-07 21:57:56,070 - INFO -
+| Epoch:    485 | Train loss: 0.2061 | Valid loss: 0.2803 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 404 | Epoch time: 0.5 |
+
+2023-01-07 21:57:56,598 - INFO -
+| Epoch:    486 | Train loss: 0.2020 | Valid loss: 0.2755 | Train acc: 0.8641 | Valid acc: 0.8525 | patience: 405 | Epoch time: 0.5 |
+
+2023-01-07 21:57:57,125 - INFO -
+| Epoch:    487 | Train loss: 0.2039 | Valid loss: 0.2952 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 406 | Epoch time: 0.5 |
+
+2023-01-07 21:57:57,652 - INFO -
+| Epoch:    488 | Train loss: 0.2066 | Valid loss: 0.2808 | Train acc: 0.8750 | Valid acc: 0.8197 | patience: 407 | Epoch time: 0.5 |
+
+2023-01-07 21:57:58,179 - INFO -
+| Epoch:    489 | Train loss: 0.2022 | Valid loss: 0.2756 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 408 | Epoch time: 0.5 |
+
+2023-01-07 21:57:58,707 - INFO -
+| Epoch:    490 | Train loss: 0.2049 | Valid loss: 0.2935 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 409 | Epoch time: 0.5 |
+
+2023-01-07 21:57:59,234 - INFO -
+| Epoch:    491 | Train loss: 0.2077 | Valid loss: 0.2745 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 410 | Epoch time: 0.5 |
+
+2023-01-07 21:57:59,763 - INFO -
+| Epoch:    492 | Train loss: 0.2045 | Valid loss: 0.2837 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 411 | Epoch time: 0.5 |
+
+2023-01-07 21:58:00,290 - INFO -
+| Epoch:    493 | Train loss: 0.2016 | Valid loss: 0.2991 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 412 | Epoch time: 0.5 |
+
+2023-01-07 21:58:00,818 - INFO -
+| Epoch:    494 | Train loss: 0.2073 | Valid loss: 0.2728 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 413 | Epoch time: 0.5 |
+
+2023-01-07 21:58:01,346 - INFO -
+| Epoch:    495 | Train loss: 0.2073 | Valid loss: 0.2876 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 414 | Epoch time: 0.5 |
+
+2023-01-07 21:58:01,874 - INFO -
+| Epoch:    496 | Train loss: 0.2020 | Valid loss: 0.2889 | Train acc: 0.8913 | Valid acc: 0.8197 | patience: 415 | Epoch time: 0.5 |
+
+2023-01-07 21:58:02,401 - INFO -
+| Epoch:    497 | Train loss: 0.2020 | Valid loss: 0.2751 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 416 | Epoch time: 0.5 |
+
+2023-01-07 21:58:02,929 - INFO -
+| Epoch:    498 | Train loss: 0.2056 | Valid loss: 0.2953 | Train acc: 0.8641 | Valid acc: 0.8525 | patience: 417 | Epoch time: 0.5 |
+
+2023-01-07 21:58:03,456 - INFO -
+| Epoch:    499 | Train loss: 0.2042 | Valid loss: 0.2810 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 418 | Epoch time: 0.5 |
+
+2023-01-07 21:58:03,984 - INFO -
+| Epoch:    500 | Train loss: 0.2026 | Valid loss: 0.2821 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 419 | Epoch time: 0.5 |
+
+2023-01-07 21:58:04,512 - INFO -
+| Epoch:    501 | Train loss: 0.2021 | Valid loss: 0.2903 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 420 | Epoch time: 0.5 |
+
+2023-01-07 21:58:05,040 - INFO -
+| Epoch:    502 | Train loss: 0.2020 | Valid loss: 0.2820 | Train acc: 0.8859 | Valid acc: 0.8525 | patience: 421 | Epoch time: 0.5 |
+
+2023-01-07 21:58:05,568 - INFO -
+| Epoch:    503 | Train loss: 0.2023 | Valid loss: 0.2836 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 422 | Epoch time: 0.5 |
+
+2023-01-07 21:58:06,096 - INFO -
+| Epoch:    504 | Train loss: 0.2019 | Valid loss: 0.2920 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 423 | Epoch time: 0.5 |
+
+2023-01-07 21:58:06,624 - INFO -
+| Epoch:    505 | Train loss: 0.2018 | Valid loss: 0.2861 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 424 | Epoch time: 0.5 |
+
+2023-01-07 21:58:07,151 - INFO -
+| Epoch:    506 | Train loss: 0.2018 | Valid loss: 0.2863 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 425 | Epoch time: 0.5 |
+
+2023-01-07 21:58:07,679 - INFO -
+| Epoch:    507 | Train loss: 0.2014 | Valid loss: 0.2887 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 426 | Epoch time: 0.5 |
+
+2023-01-07 21:58:08,206 - INFO -
+| Epoch:    508 | Train loss: 0.2012 | Valid loss: 0.2927 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 427 | Epoch time: 0.5 |
+
+2023-01-07 21:58:08,735 - INFO -
+| Epoch:    509 | Train loss: 0.2012 | Valid loss: 0.2884 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 428 | Epoch time: 0.5 |
+
+2023-01-07 21:58:09,262 - INFO -
+| Epoch:    510 | Train loss: 0.2009 | Valid loss: 0.2877 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 429 | Epoch time: 0.5 |
+
+2023-01-07 21:58:09,790 - INFO -
+| Epoch:    511 | Train loss: 0.2006 | Valid loss: 0.2917 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 430 | Epoch time: 0.5 |
+
+2023-01-07 21:58:10,318 - INFO -
+| Epoch:    512 | Train loss: 0.2010 | Valid loss: 0.2859 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 431 | Epoch time: 0.5 |
+
+2023-01-07 21:58:10,847 - INFO -
+| Epoch:    513 | Train loss: 0.2007 | Valid loss: 0.2888 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 432 | Epoch time: 0.5 |
+
+2023-01-07 21:58:11,376 - INFO -
+| Epoch:    514 | Train loss: 0.2003 | Valid loss: 0.2944 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 433 | Epoch time: 0.5 |
+
+2023-01-07 21:58:11,904 - INFO -
+| Epoch:    515 | Train loss: 0.2009 | Valid loss: 0.2854 | Train acc: 0.8913 | Valid acc: 0.8525 | patience: 434 | Epoch time: 0.5 |
+
+2023-01-07 21:58:12,433 - INFO -
+| Epoch:    516 | Train loss: 0.2005 | Valid loss: 0.2901 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 435 | Epoch time: 0.5 |
+
+2023-01-07 21:58:12,960 - INFO -
+| Epoch:    517 | Train loss: 0.2000 | Valid loss: 0.2887 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 436 | Epoch time: 0.5 |
+
+2023-01-07 21:58:13,488 - INFO -
+| Epoch:    518 | Train loss: 0.1999 | Valid loss: 0.2855 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 437 | Epoch time: 0.5 |
+
+2023-01-07 21:58:14,016 - INFO -
+| Epoch:    519 | Train loss: 0.2001 | Valid loss: 0.3027 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 438 | Epoch time: 0.5 |
+
+2023-01-07 21:58:14,544 - INFO -
+| Epoch:    520 | Train loss: 0.2059 | Valid loss: 0.2776 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 439 | Epoch time: 0.5 |
+
+2023-01-07 21:58:15,072 - INFO -
+| Epoch:    521 | Train loss: 0.2079 | Valid loss: 0.2961 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 440 | Epoch time: 0.5 |
+
+2023-01-07 21:58:15,600 - INFO -
+| Epoch:    522 | Train loss: 0.2011 | Valid loss: 0.2997 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 441 | Epoch time: 0.5 |
+
+2023-01-07 21:58:16,128 - INFO -
+| Epoch:    523 | Train loss: 0.2026 | Valid loss: 0.2786 | Train acc: 0.8913 | Valid acc: 0.8197 | patience: 442 | Epoch time: 0.5 |
+
+2023-01-07 21:58:16,657 - INFO -
+| Epoch:    524 | Train loss: 0.2113 | Valid loss: 0.2959 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 443 | Epoch time: 0.5 |
+
+2023-01-07 21:58:17,185 - INFO -
+| Epoch:    525 | Train loss: 0.2017 | Valid loss: 0.2995 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 444 | Epoch time: 0.5 |
+
+2023-01-07 21:58:17,713 - INFO -
+| Epoch:    526 | Train loss: 0.2019 | Valid loss: 0.2821 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 445 | Epoch time: 0.5 |
+
+2023-01-07 21:58:18,240 - INFO -
+| Epoch:    527 | Train loss: 0.2090 | Valid loss: 0.2995 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 446 | Epoch time: 0.5 |
+
+2023-01-07 21:58:18,768 - INFO -
+| Epoch:    528 | Train loss: 0.2015 | Valid loss: 0.2961 | Train acc: 0.8859 | Valid acc: 0.8361 | patience: 447 | Epoch time: 0.5 |
+
+2023-01-07 21:58:19,296 - INFO -
+| Epoch:    529 | Train loss: 0.1999 | Valid loss: 0.2809 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 448 | Epoch time: 0.5 |
+
+2023-01-07 21:58:19,824 - INFO -
+| Epoch:    530 | Train loss: 0.2035 | Valid loss: 0.2969 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 449 | Epoch time: 0.5 |
+
+2023-01-07 21:58:20,352 - INFO -
+| Epoch:    531 | Train loss: 0.2020 | Valid loss: 0.2863 | Train acc: 0.8859 | Valid acc: 0.8525 | patience: 450 | Epoch time: 0.5 |
+
+2023-01-07 21:58:20,880 - INFO -
+| Epoch:    532 | Train loss: 0.2002 | Valid loss: 0.2924 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 451 | Epoch time: 0.5 |
+
+2023-01-07 21:58:21,409 - INFO -
+| Epoch:    533 | Train loss: 0.1994 | Valid loss: 0.3000 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 452 | Epoch time: 0.5 |
+
+2023-01-07 21:58:21,938 - INFO -
+| Epoch:    534 | Train loss: 0.2015 | Valid loss: 0.2810 | Train acc: 0.8913 | Valid acc: 0.8525 | patience: 453 | Epoch time: 0.5 |
+
+2023-01-07 21:58:22,466 - INFO -
+| Epoch:    535 | Train loss: 0.2055 | Valid loss: 0.2972 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 454 | Epoch time: 0.5 |
+
+2023-01-07 21:58:22,994 - INFO -
+| Epoch:    536 | Train loss: 0.2026 | Valid loss: 0.2921 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 455 | Epoch time: 0.5 |
+
+2023-01-07 21:58:23,522 - INFO -
+| Epoch:    537 | Train loss: 0.1996 | Valid loss: 0.2944 | Train acc: 0.8696 | Valid acc: 0.8033 | patience: 456 | Epoch time: 0.5 |
+
+2023-01-07 21:58:24,050 - INFO -
+| Epoch:    538 | Train loss: 0.2000 | Valid loss: 0.2937 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 457 | Epoch time: 0.5 |
+
+2023-01-07 21:58:24,578 - INFO -
+| Epoch:    539 | Train loss: 0.1998 | Valid loss: 0.2924 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 458 | Epoch time: 0.5 |
+
+2023-01-07 21:58:25,106 - INFO -
+| Epoch:    540 | Train loss: 0.1998 | Valid loss: 0.2894 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 459 | Epoch time: 0.5 |
+
+2023-01-07 21:58:25,634 - INFO -
+| Epoch:    541 | Train loss: 0.1998 | Valid loss: 0.2885 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 460 | Epoch time: 0.5 |
+
+2023-01-07 21:58:26,163 - INFO -
+| Epoch:    542 | Train loss: 0.2002 | Valid loss: 0.2909 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 461 | Epoch time: 0.5 |
+
+2023-01-07 21:58:26,692 - INFO -
+| Epoch:    543 | Train loss: 0.1995 | Valid loss: 0.2915 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 462 | Epoch time: 0.5 |
+
+2023-01-07 21:58:27,220 - INFO -
+| Epoch:    544 | Train loss: 0.1996 | Valid loss: 0.2904 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 463 | Epoch time: 0.5 |
+
+2023-01-07 21:58:27,748 - INFO -
+| Epoch:    545 | Train loss: 0.1999 | Valid loss: 0.2971 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 464 | Epoch time: 0.5 |
+
+2023-01-07 21:58:28,276 - INFO -
+| Epoch:    546 | Train loss: 0.2008 | Valid loss: 0.2829 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 465 | Epoch time: 0.5 |
+
+2023-01-07 21:58:28,804 - INFO -
+| Epoch:    547 | Train loss: 0.2017 | Valid loss: 0.2993 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 466 | Epoch time: 0.5 |
+
+2023-01-07 21:58:29,333 - INFO -
+| Epoch:    548 | Train loss: 0.2028 | Valid loss: 0.2792 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 467 | Epoch time: 0.5 |
+
+2023-01-07 21:58:29,862 - INFO -
+| Epoch:    549 | Train loss: 0.2050 | Valid loss: 0.2941 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 468 | Epoch time: 0.5 |
+
+2023-01-07 21:58:30,390 - INFO -
+| Epoch:    550 | Train loss: 0.2003 | Valid loss: 0.3046 | Train acc: 0.8804 | Valid acc: 0.8197 | patience: 469 | Epoch time: 0.5 |
+
+2023-01-07 21:58:30,920 - INFO -
+| Epoch:    551 | Train loss: 0.2051 | Valid loss: 0.2783 | Train acc: 0.8913 | Valid acc: 0.8197 | patience: 470 | Epoch time: 0.5 |
+
+2023-01-07 21:58:31,449 - INFO -
+| Epoch:    552 | Train loss: 0.2106 | Valid loss: 0.2957 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 471 | Epoch time: 0.5 |
+
+2023-01-07 21:58:31,978 - INFO -
+| Epoch:    553 | Train loss: 0.2021 | Valid loss: 0.2968 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 472 | Epoch time: 0.5 |
+
+2023-01-07 21:58:32,506 - INFO -
+| Epoch:    554 | Train loss: 0.2018 | Valid loss: 0.2807 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 473 | Epoch time: 0.5 |
+
+2023-01-07 21:58:33,033 - INFO -
+| Epoch:    555 | Train loss: 0.2078 | Valid loss: 0.3022 | Train acc: 0.8804 | Valid acc: 0.7869 | patience: 474 | Epoch time: 0.5 |
+
+2023-01-07 21:58:33,562 - INFO -
+| Epoch:    556 | Train loss: 0.2027 | Valid loss: 0.2971 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 475 | Epoch time: 0.5 |
+
+2023-01-07 21:58:34,092 - INFO -
+| Epoch:    557 | Train loss: 0.2000 | Valid loss: 0.2789 | Train acc: 0.8750 | Valid acc: 0.8033 | patience: 476 | Epoch time: 0.5 |
+
+2023-01-07 21:58:34,623 - INFO -
+| Epoch:    558 | Train loss: 0.2110 | Valid loss: 0.2988 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 477 | Epoch time: 0.5 |
+
+2023-01-07 21:58:35,152 - INFO -
+| Epoch:    559 | Train loss: 0.2026 | Valid loss: 0.2885 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 478 | Epoch time: 0.5 |
+
+2023-01-07 21:58:35,681 - INFO -
+| Epoch:    560 | Train loss: 0.2000 | Valid loss: 0.2853 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 479 | Epoch time: 0.5 |
+
+2023-01-07 21:58:36,210 - INFO -
+| Epoch:    561 | Train loss: 0.2002 | Valid loss: 0.3025 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 480 | Epoch time: 0.5 |
+
+2023-01-07 21:58:36,740 - INFO -
+| Epoch:    562 | Train loss: 0.2019 | Valid loss: 0.2890 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 481 | Epoch time: 0.5 |
+
+2023-01-07 21:58:37,269 - INFO -
+| Epoch:    563 | Train loss: 0.1999 | Valid loss: 0.2933 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 482 | Epoch time: 0.5 |
+
+2023-01-07 21:58:37,797 - INFO -
+| Epoch:    564 | Train loss: 0.1988 | Valid loss: 0.2938 | Train acc: 0.8804 | Valid acc: 0.8361 | patience: 483 | Epoch time: 0.5 |
+
+2023-01-07 21:58:38,325 - INFO -
+| Epoch:    565 | Train loss: 0.1996 | Valid loss: 0.2848 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 484 | Epoch time: 0.5 |
+
+2023-01-07 21:58:38,854 - INFO -
+| Epoch:    566 | Train loss: 0.2003 | Valid loss: 0.2996 | Train acc: 0.8641 | Valid acc: 0.8197 | patience: 485 | Epoch time: 0.5 |
+
+2023-01-07 21:58:39,382 - INFO -
+| Epoch:    567 | Train loss: 0.2003 | Valid loss: 0.2897 | Train acc: 0.8913 | Valid acc: 0.8361 | patience: 486 | Epoch time: 0.5 |
+
+2023-01-07 21:58:39,911 - INFO -
+| Epoch:    568 | Train loss: 0.2018 | Valid loss: 0.2981 | Train acc: 0.8641 | Valid acc: 0.8361 | patience: 487 | Epoch time: 0.5 |
+
+2023-01-07 21:58:40,440 - INFO -
+| Epoch:    569 | Train loss: 0.1989 | Valid loss: 0.2883 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 488 | Epoch time: 0.5 |
+
+2023-01-07 21:58:40,970 - INFO -
+| Epoch:    570 | Train loss: 0.1990 | Valid loss: 0.2923 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 489 | Epoch time: 0.5 |
+
+2023-01-07 21:58:41,498 - INFO -
+| Epoch:    571 | Train loss: 0.1984 | Valid loss: 0.2955 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 490 | Epoch time: 0.5 |
+
+2023-01-07 21:58:42,027 - INFO -
+| Epoch:    572 | Train loss: 0.1981 | Valid loss: 0.2913 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 491 | Epoch time: 0.5 |
+
+2023-01-07 21:58:42,556 - INFO -
+| Epoch:    573 | Train loss: 0.1991 | Valid loss: 0.2964 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 492 | Epoch time: 0.5 |
+
+2023-01-07 21:58:43,084 - INFO -
+| Epoch:    574 | Train loss: 0.1979 | Valid loss: 0.2928 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 493 | Epoch time: 0.5 |
+
+2023-01-07 21:58:43,614 - INFO -
+| Epoch:    575 | Train loss: 0.1984 | Valid loss: 0.2899 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 494 | Epoch time: 0.5 |
+
+2023-01-07 21:58:44,142 - INFO -
+| Epoch:    576 | Train loss: 0.1981 | Valid loss: 0.2954 | Train acc: 0.8696 | Valid acc: 0.8361 | patience: 495 | Epoch time: 0.5 |
+
+2023-01-07 21:58:44,671 - INFO -
+| Epoch:    577 | Train loss: 0.1976 | Valid loss: 0.2979 | Train acc: 0.8750 | Valid acc: 0.8361 | patience: 496 | Epoch time: 0.5 |
+
+2023-01-07 21:58:45,199 - INFO -
+| Epoch:    578 | Train loss: 0.1979 | Valid loss: 0.2892 | Train acc: 0.8804 | Valid acc: 0.8525 | patience: 497 | Epoch time: 0.5 |
+
+2023-01-07 21:58:45,728 - INFO -
+| Epoch:    579 | Train loss: 0.1987 | Valid loss: 0.3002 | Train acc: 0.8696 | Valid acc: 0.8197 | patience: 498 | Epoch time: 0.5 |
+
+2023-01-07 21:58:46,257 - INFO -
+| Epoch:    580 | Train loss: 0.1985 | Valid loss: 0.2913 | Train acc: 0.8750 | Valid acc: 0.8525 | patience: 499 | Epoch time: 0.5 |
+
+2023-01-07 21:58:46,786 - INFO -
+| Epoch:    581 | Train loss: 0.1980 | Valid loss: 0.2920 | Train acc: 0.8696 | Valid acc: 0.8525 | patience: 500 | Epoch time: 0.5 |
+
+2023-01-07 21:58:47,314 - INFO -
+Early stop.
+
+2023-01-07 21:58:47,320 - INFO -
+Training if finished.
+
