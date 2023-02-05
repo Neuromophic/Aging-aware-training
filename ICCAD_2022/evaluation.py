@@ -12,7 +12,7 @@
 #SBATCH --time=48:00:00
 
 #SBATCH --partition=sdil
-#SBATCH --gres=gpu:4
+#SBATCH --gres=gpu:1
 
 import sys
 import os
